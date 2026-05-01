@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c840vwk05ev1b"]
+
+[ext_resource type="Script" uid="uid://c22n4bw7d1auf" path="res://scripts/world/guild_hall.gd" id="1_arvt8"]
+[ext_resource type="PackedScene" uid="uid://bqgvauv8o1rt3" path="res://scenes/entities/player.tscn" id="1_mp82y"]
+[ext_resource type="PackedScene" uid="uid://d0erdynefxe18" path="res://scenes/world/quest_board.tscn" id="2_arvt8"]
+[ext_resource type="PackedScene" uid="uid://dhrg8jpf1iybq" path="res://scenes/ui/dialogue_ui.tscn" id="3_fulwp"]
+[ext_resource type="PackedScene" uid="uid://c5mwi1fin28kk" path="res://scenes/npcs/receptionist.tscn" id="4_fulwp"]
+[ext_resource type="PackedScene" uid="uid://dordtujxl8oy5" path="res://scenes/world/registration.tscn" id="6_fj5ny"]
+
+[node name="GuildHall" type="Node2D" unique_id=212327842]
+script = ExtResource("1_arvt8")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=2103160576]
+position = Vector2(237, -69)
+format = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1519556196]
+position = Vector2(-290, 13)
+
+[node name="Player" parent="." unique_id=576924845 instance=ExtResource("1_mp82y")]
+position = Vector2(-1, 0)
+
+[node name="QuestBoard" parent="." unique_id=647656168 instance=ExtResource("2_arvt8")]
+position = Vector2(127, 63)
+
+[node name="DialogueUI" parent="." unique_id=1971843003 instance=ExtResource("3_fulwp")]
+
+[node name="NPCS" type="Node" parent="." unique_id=1063228837]
+
+[node name="Receptionist" parent="NPCS" unique_id=1046059495 instance=ExtResource("4_fulwp")]
+position = Vector2(-127, 47)
+
+[node name="Registration" parent="." unique_id=2095679031 instance=ExtResource("6_fj5ny")]
+visible = false
+
+[node name="Node" type="Node" parent="." unique_id=804672607]
+
+[node name="Label" type="Label" parent="Node" unique_id=47544901]
+offset_left = -233.0
+offset_top = 113.0
+offset_right = -17.0
+offset_bottom = 188.0
+text = "Press E to interact with the Receptionist and register your class"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Node" unique_id=1535878806]
+offset_left = -208.0
+offset_top = -33.0
+offset_right = 8.0
+offset_bottom = -10.0
+text = "Receptionist"
+
+[node name="Label3" type="Label" parent="Node" unique_id=686667162]
+offset_left = 100.0
+offset_top = -24.0
+offset_right = 316.0
+offset_bottom = -1.0
+text = "Quest"
+
+[node name="Label4" type="Label" parent="Node" unique_id=655910779]
+offset_left = 42.0
+offset_top = 123.0
+offset_right = 258.0
+offset_bottom = 198.0
+text = "Press E to interact with the Quest "
+autowrap_mode = 2

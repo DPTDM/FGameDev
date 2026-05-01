@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c0isonlvtxhdc"]
+
+[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="1_emu5d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qra8j"]
+atlas = ExtResource("1_emu5d")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ew15e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qra8j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh4dx"]
+size = Vector2(58, 59)
+
+[node name="Ashton" type="CharacterBody2D" unique_id=1090409998]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=550592638]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ew15e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240920341]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_lh4dx")

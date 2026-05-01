@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bqgvauv8o1rt3"]
+
+[ext_resource type="Script" uid="uid://cme0tt4hmqbhb" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://dbcl0fvb00bou" path="res://Scripts/SwordHitbox.gd" id="2_swordhb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6t5aa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvnsp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
+size = Vector2(58, 60)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sword"]
+height = 55.0
+
+[node name="Player" type="CharacterBody2D" unique_id=576924845]
+process_mode = 1
+script = ExtResource("1_cvnsp")
+
+[node name="VisualLook" type="AnimatedSprite2D" parent="." unique_id=623561438]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_6t5aa")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=176593011]
+shape = SubResource("RectangleShape2D_6t5aa")
+
+[node name="POV" type="Camera2D" parent="." unique_id=218826063]
+position_smoothing_enabled = true
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=622571167]
+
+[node name="WeaponSlot" type="Marker2D" parent="WeaponPivot" unique_id=2107046164]
+position = Vector2(40, 0)
+
+[node name="Weapon" type="Sprite2D" parent="WeaponPivot/WeaponSlot" unique_id=1500699962]
+position = Vector2(20, 0)
+scale = Vector2(0.4, 0.4)
+
+[node name="SwordHitbox" type="Area2D" parent="WeaponPivot/WeaponSlot" unique_id=-993047285]
+collision_layer = 4
+collision_mask = 2
+monitoring = false
+script = ExtResource("2_swordhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPivot/WeaponSlot/SwordHitbox" unique_id=106952716]
+position = Vector2(30, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sword")
+disabled = true

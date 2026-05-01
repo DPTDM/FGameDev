@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://dpx1afmcrtxgi"]
+
+[ext_resource type="Script" uid="uid://yjaqfbyr5txw" path="res://scripts/ui/stats_panel.gd" id="1_s1554"]
+
+[node name="StatPage" type="Control" unique_id=1601477638]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=50045366]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="StatsPanel" type="Panel" parent="." unique_id=801965576]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_s1554")
+
+[node name="Name" type="Label" parent="StatsPanel" unique_id=1809470935]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 73.0
+text = "Name:"
+
+[node name="Class" type="Label" parent="StatsPanel" unique_id=1806697362]
+layout_mode = 0
+offset_top = 71.0
+offset_right = 51.0
+offset_bottom = 94.0
+text = "Class:"
+
+[node name="Level" type="Label" parent="StatsPanel" unique_id=1045894689]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 51.0
+offset_bottom = 115.0
+text = "Level:"
+
+[node name="StatText" type="Label" parent="StatsPanel" unique_id=767395404]
+layout_mode = 0
+offset_top = 166.0
+offset_right = 51.0
+offset_bottom = 189.0
+text = "Stats:"
+
+[node name="HP" type="HBoxContainer" parent="StatsPanel" unique_id=1545813791]
+layout_mode = 0
+offset_top = 188.0
+offset_right = 40.0
+offset_bottom = 228.0
+
+[node name="HPLabel" type="Label" parent="StatsPanel/HP" unique_id=1452957583]
+layout_mode = 2
+text = "HP: 100"
+
+[node name="HUp" type="Button" parent="StatsPanel/HP" unique_id=808782851]
+layout_mode = 2
+text = "   +   "
+
+[node name="Physical" type="HBoxContainer" parent="StatsPanel" unique_id=351479115]
+layout_mode = 0
+offset_top = 229.0
+offset_right = 191.0
+offset_bottom = 269.0
+
+[node name="PhysicalLabel" type="Label" parent="StatsPanel/Physical" unique_id=24041812]
+layout_mode = 2
+text = "Physical Attack: 10"
+
+[node name="PUp" type="Button" parent="StatsPanel/Physical" unique_id=1750707139]
+layout_mode = 2
+text = "   +   "
+
+[node name="Magic" type="HBoxContainer" parent="StatsPanel" unique_id=1146304261]
+layout_mode = 0
+offset_top = 270.0
+offset_right = 173.0
+offset_bottom = 310.0
+
+[node name="MagicLabel" type="Label" parent="StatsPanel/Magic" unique_id=909885055]
+layout_mode = 2
+text = "Magic Attack: 10"
+
+[node name="MUp" type="Button" parent="StatsPanel/Magic" unique_id=1689766408]
+layout_mode = 2
+text = "   +   "
+
+[node name="Bulk" type="HBoxContainer" parent="StatsPanel" unique_id=1116723310]
+layout_mode = 0
+offset_top = 310.0
+offset_right = 121.0
+offset_bottom = 350.0
+
+[node name="BulkLabel" type="Label" parent="StatsPanel/Bulk" unique_id=1039421033]
+layout_mode = 2
+text = "Bulk: 10"
+
+[node name="BUp" type="Button" parent="StatsPanel/Bulk" unique_id=1268616738]
+layout_mode = 2
+text = "   +   "
+
+[node name="Speed" type="HBoxContainer" parent="StatsPanel" unique_id=1413521364]
+layout_mode = 0
+offset_top = 350.0
+offset_right = 122.0
+offset_bottom = 390.0
+
+[node name="SpeedLabel" type="Label" parent="StatsPanel/Speed" unique_id=543361672]
+layout_mode = 2
+text = "Speed: 10"
+
+[node name="SUp" type="Button" parent="StatsPanel/Speed" unique_id=227164372]
+layout_mode = 2
+text = "   +   "
+
+[node name="AllocStat" type="Label" parent="StatsPanel" unique_id=907541284]
+layout_mode = 0
+offset_top = 393.0
+offset_right = 147.0
+offset_bottom = 416.0
+text = "Allocatable Stats: 5"

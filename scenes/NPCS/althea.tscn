@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dxk03s8w6sihn"]
+
+[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="1_l1m21"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaxyn"]
+atlas = ExtResource("1_l1m21")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uleop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaxyn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx841"]
+size = Vector2(61, 60)
+
+[node name="Althea" type="CharacterBody2D" unique_id=1331837643]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1943986743]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_uleop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619673928]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jx841")

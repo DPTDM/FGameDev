@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dordtujxl8oy5"]
+
+[ext_resource type="Script" uid="uid://skff6hq4tjit" path="res://scripts/world/registration.gd" id="1_bcv41"]
+
+[node name="Registration" type="CanvasLayer" unique_id=1035019550]
+script = ExtResource("1_bcv41")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=295031660]
+offset_right = 1154.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=670884371]
+offset_left = 318.00003
+offset_top = 199.00002
+offset_right = 718.0
+offset_bottom = 406.0
+scale = Vector2(1.25, 1.25)
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=239691353]
+layout_mode = 2
+text = "Enter your Name"
+
+[node name="NameInput" type="LineEdit" parent="VBoxContainer" unique_id=576108387]
+layout_mode = 2
+
+[node name="GenderLabel" type="Label" parent="VBoxContainer" unique_id=288242564]
+layout_mode = 2
+text = "Enter your Gender"
+
+[node name="GenderManager" type="OptionButton" parent="VBoxContainer" unique_id=1863610991]
+layout_mode = 2
+
+[node name="SpecializationLabel" type="Label" parent="VBoxContainer" unique_id=1904396431]
+layout_mode = 2
+text = "Choose Specialization"
+
+[node name="SpecManager" type="OptionButton" parent="VBoxContainer" unique_id=167554505]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1226267560]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="VBoxContainer" unique_id=213864736]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="VBoxContainer" unique_id=1044864515]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=58086189]
+layout_mode = 2
+text = "Register"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
