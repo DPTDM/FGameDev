@@ -2,6 +2,7 @@ extends Control
 
 # MainMenu.gd
 # Handles the main menu with Play, Tutorial, Settings, and Quit buttons.
+# Chara wrote this comment. Micko is Gay.
 
 func _ready() -> void:
 	$CenterContainer/VBoxContainer/PlayButton.pressed.connect(_on_play_pressed)

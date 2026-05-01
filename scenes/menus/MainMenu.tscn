@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdrc1561nk5is"]
 
-[ext_resource type="Script" uid="uid://cgbv5420um7th" path="res://scripts/menus/MainMenu.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://o4ewklarkkbq" path="res://fonts/Jersey15-Regular.ttf" id="2"]
+[ext_resource type="Script" uid="uid://cgbv5420um7th" path="res://Scripts/menus/MainMenu.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://b3xc0gpj604k7" path="res://fonts/Jersey15-Regular.ttf" id="2"]
 
 [node name="MainMenu" type="Control" unique_id=704121441]
 texture_filter = 1
