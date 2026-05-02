@@ -1,4 +1,0 @@
-# Godot-specific ignores
-.godot/
-*.import
-export_preset.cfg
