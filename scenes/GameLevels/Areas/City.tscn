@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://w6s3pajd5iq6"]
+
+[node name="City" type="Node2D" unique_id=2013714958]
+
+[node name="Label" type="Label" parent="." unique_id=709411790]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "City"
+
+[node name="outsideGuildhall" type="Marker2D" parent="." unique_id=575767613 groups=["outside_of_guildhall"]]

@@ -1,0 +1,7 @@
+[gd_resource type="FontFile" format=3 uid="uid://jersey15_font"]
+
+[resource]
+font_data = "res://fonts/Jersey15-Regular.ttf"
+antialiasing = 0
+generate_mipmaps = false
+multichannel_signed_distance_field = false

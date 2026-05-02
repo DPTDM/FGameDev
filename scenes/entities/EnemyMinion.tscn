@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://enemy_minion01"]
+
+[ext_resource type="Script" path="res://scripts/entities/EnemyMinion.gd" id="1"]
+[ext_resource type="FontFile" path="res://fonts/Jersey15-Regular.ttf" id="2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hit"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
+radius = 200.0
+
+[node name="EnemyMinion" type="CharacterBody2D"]
+script = ExtResource("1")
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="."]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+color = Color(0.8, 0.15, 0.15, 1)
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -54.0
+offset_right = 30.0
+offset_bottom = -36.0
+horizontal_alignment = 1
+text = "MINION"
+theme_override_font_sizes/font_size = 11
+theme_override_fonts/font = ExtResource("2")
+theme_override_colors/font_color = Color(1.0, 0.5, 0.5, 1)
+
+[node name="HPLabel" type="Label" parent="."]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = -18.0
+horizontal_alignment = 1
+text = "HP: 50/50"
+theme_override_font_sizes/font_size = 11
+theme_override_fonts/font = ExtResource("2")
+theme_override_colors/font_color = Color(0.2, 1.0, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_body")
+
+[node name="HitArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+shape = SubResource("RectangleShape2D_hit")
+
+[node name="DetectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+shape = SubResource("CircleShape2D_detect")
+
+[node name="RangeVisual" type="Node2D" parent="."]
+
+[node name="RangeCircle" type="Line2D" parent="RangeVisual"]
+default_color = Color(1.0, 0.3, 0.3, 0.25)
+width = 1.5
