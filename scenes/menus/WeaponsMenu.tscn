@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bbsvwotu72s55"]
 
-[ext_resource type="Script" uid="uid://btbmsyns6of5b" path="res://scripts/menus/WeaponsMenu.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://o4ewklarkkbq" path="res://fonts/Jersey15-Regular.ttf" id="2"]
-[ext_resource type="Texture2D" uid="uid://2wvsnfaaijhh" path="res://assets/weapons/battle-axe.png" id="3_rxodr"]
-[ext_resource type="Texture2D" uid="uid://catp37ohyk4mm" path="res://assets/weapons/broadsword.png" id="4_fho4r"]
-[ext_resource type="Texture2D" uid="uid://cak8jwu2k7wmf" path="res://assets/weapons/magic_staff.png" id="5"]
+[ext_resource type="Script" uid="uid://bpldsj0m1bglw" path="res://scripts/menus/WeaponsMenu.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://b3xc0gpj604k7" path="res://fonts/Jersey15-Regular.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://64quq5n3m5fo" path="res://assets/weapons/battle-axe.png" id="3_rxodr"]
+[ext_resource type="Texture2D" uid="uid://dsnlkik7636bo" path="res://assets/weapons/broadsword.png" id="4_fho4r"]
+[ext_resource type="Texture2D" uid="uid://bq3acm5v4jqf0" path="res://assets/weapons/magic_staff.png" id="5"]
 [ext_resource type="Texture2D" path="res://assets/weapons/dagger.png" id="6_dagger"]
 [ext_resource type="Texture2D" path="res://assets/weapons/spear.png" id="7_spear"]
 

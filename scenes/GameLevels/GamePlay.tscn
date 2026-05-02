@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://py88o7nrkbrt"]
 
 [ext_resource type="PackedScene" uid="uid://bqgvauv8o1rt3" path="res://scenes/entities/player.tscn" id="1_6yir2"]
-[ext_resource type="Script" uid="uid://d3uq3xygba1ei" path="res://Scripts/AreaScripts/Gameplay/game_play.gd" id="1_ck0k7"]
-[ext_resource type="PackedScene" uid="uid://dpx1afmcrtxgi" path="res://scenes/UI/stat_page.tscn" id="1_nuumi"]
-[ext_resource type="PackedScene" uid="uid://dhrg8jpf1iybq" path="res://scenes/UI/dialogue_ui.tscn" id="2_nuumi"]
+[ext_resource type="Script" uid="uid://d3uq3xygba1ei" path="res://scripts/AreaScripts/Gameplay/game_play.gd" id="1_ck0k7"]
+[ext_resource type="PackedScene" uid="uid://dpx1afmcrtxgi" path="res://scenes/ui/stat_page.tscn" id="1_nuumi"]
+[ext_resource type="PackedScene" uid="uid://dhrg8jpf1iybq" path="res://scenes/ui/dialogue_ui.tscn" id="2_nuumi"]
 
 [node name="GamePlay" type="Node2D" unique_id=1611295873]
 script = ExtResource("1_ck0k7")

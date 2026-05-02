@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bqgvauv8o1rt3"]
 
-[ext_resource type="Script" uid="uid://cme0tt4hmqbhb" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="1_v0iea"]
-[ext_resource type="Script" uid="uid://dbcl0fvb00bou" path="res://Scripts/SwordHitbox.gd" id="2_swordhb"]
+[ext_resource type="Script" uid="uid://cme0tt4hmqbhb" path="res://scripts/entities/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cnq5p7nwuowag" path="res://icon.svg" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://dbcl0fvb00bou" path="res://scripts/entities/SwordHitbox.gd" id="2_swordhb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")

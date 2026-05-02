@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c840vwk05ev1b"]
 
 [ext_resource type="Script" uid="uid://c22n4bw7d1auf" path="res://scripts/world/guild_hall.gd" id="1_arvt8"]
+[ext_resource type="FontFile" path="res://fonts/Jersey15-Regular.ttf" id="font_gh"]
 [ext_resource type="PackedScene" uid="uid://bqgvauv8o1rt3" path="res://scenes/entities/player.tscn" id="1_mp82y"]
 [ext_resource type="PackedScene" uid="uid://d0erdynefxe18" path="res://scenes/world/quest_board.tscn" id="2_arvt8"]
 [ext_resource type="PackedScene" uid="uid://dhrg8jpf1iybq" path="res://scenes/ui/dialogue_ui.tscn" id="3_fulwp"]
@@ -64,3 +65,66 @@ offset_right = 258.0
 offset_bottom = 198.0
 text = "Press E to interact with the Quest "
 autowrap_mode = 2
+
+[node name="EscMenu" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Blocker" type="ColorRect" parent="EscMenu"]
+process_mode = 3
+visible = false
+mouse_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="PanelContainer" parent="EscMenu"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -120.0
+offset_right = 140.0
+offset_bottom = 120.0
+
+[node name="VBox" type="VBoxContainer" parent="EscMenu/Panel"]
+process_mode = 3
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="EscMenu/Panel/VBox"]
+process_mode = 3
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 26
+theme_override_fonts/font = ExtResource("font_gh")
+theme_override_colors/font_color = Color(0.9, 0.85, 0.3, 1)
+
+[node name="ResumeBtn" type="Button" parent="EscMenu/Panel/VBox"]
+process_mode = 3
+layout_mode = 2
+text = "Resume"
+theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("font_gh")
+
+[node name="SettingsBtn" type="Button" parent="EscMenu/Panel/VBox"]
+process_mode = 3
+layout_mode = 2
+text = "Settings"
+theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("font_gh")
+
+[node name="ExitBtn" type="Button" parent="EscMenu/Panel/VBox"]
+process_mode = 3
+layout_mode = 2
+text = "Exit to Main Menu"
+theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("font_gh")
+

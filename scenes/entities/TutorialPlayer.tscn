@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/entities/TutorialPlayer.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/entities/SwordHitbox.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://cnq5p7nwuowag" path="res://icon.svg" id="3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tp"]
 atlas = ExtResource("3")

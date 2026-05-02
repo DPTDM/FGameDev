@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var next_area_path: String = "res://scenes/GameLevels/Areas/city.tscn"
+@export var next_area_path: String = "res://scenes/GameLevels/Areas/City.tscn"
 @export var entry_group: String = "outside_of_guildhall"
 
 func _on_body_entered(body):

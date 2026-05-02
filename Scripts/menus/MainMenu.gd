@@ -16,7 +16,7 @@ func _on_play_pressed() -> void:
 
 
 func _on_tutorial_pressed() -> void:
-	#MenuMusic.stop()
+	MenuMusic.stop()
 	SceneTransition.fade_to("res://scenes/world/TutorialWorld.tscn")
 
 

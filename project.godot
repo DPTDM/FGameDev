@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Mahiwaga-updates-DPT"
+config/name="Mahiwaga-may2-update2"
 config/description="Top-down action game with main menu system."
 run/main_scene="res://scenes/menus/MainMenu.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
@@ -26,6 +26,7 @@ SceneTransition="*res://scripts/global/SceneTransition.gd"
 GameState="*res://scripts/global/GameState.gd"
 Global="*res://scripts/global/global.gd"
 WindowManager="*res://scripts/global/WindowManager.gd"
+MenuMusic="*res://scripts/global/MenuMusic.gd"
 
 [display]
 
