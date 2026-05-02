@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg5perqlffwew"]
 
-[ext_resource type="Texture2D" uid="uid://dmj3adhekd78j" path="res://assets/art/GuildHall.png" id="1_que1o"]
+[ext_resource type="Texture2D" uid="uid://6xfiejb4e2tu" path="res://assets/art/GuildHall.png" id="1_que1o"]
 [ext_resource type="Script" uid="uid://d2cu5s8tf1ngk" path="res://scripts/AreaScripts/GuildHall/guild_hall_entrance.gd" id="2_4nq27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nq27"]
