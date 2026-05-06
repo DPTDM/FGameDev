@@ -9,16 +9,21 @@ var armor_piercing: bool = false
 var _hit_this_swing: Array[Node] = []
 
 func _ready() -> void:
-	area_entered.connect(_on_area_entered)
+	body_entered.connect(_on_body_entered)   # use body_entered for enemies
+	area_entered.connect(_on_area_entered)   # optional if you want area vs area
 
 func reset_swing() -> void:
 	_hit_this_swing.clear()
 
 func _on_area_entered(area: Area2D) -> void:
-	var target = area.get_parent()
-	if target in _hit_this_swing:
+	# optional: handle area vs area collisions
+	pass
+
+func _on_body_entered(body: Node2D) -> void:
+	print("SwordHitbox overlapped:", body.name)
+	if body in _hit_this_swing:
 		return
-	if target.has_method("take_damage"):
-		_hit_this_swing.append(target)
-		# armor_piercing=true means defense is bypassed (used by Battle Axe)
-		target.take_damage(damage, armor_piercing)
+	if body.has_method("take_damage"):
+		_hit_this_swing.append(body)
+		body.take_damage(damage, armor_piercing)
+		print("SwordHitbox hit", body.name, "for", damage, "damage")
