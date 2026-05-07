@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://c0wshj7hg0l6b"]
+
+[ext_resource type="Texture2D" uid="uid://wpo1lrfnwb8f" path="res://assets/art/Maps/insidetrain.png" id="1_7b7ux"]
+[ext_resource type="Script" uid="uid://ooh5nfhneilg" path="res://scripts/AreaScripts/insideTrain/train_scene.gd" id="1_f7me4"]
+[ext_resource type="PackedScene" uid="uid://dhrg8jpf1iybq" path="res://scenes/ui/dialogue_ui.tscn" id="1_vhm72"]
+[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="3_f7me4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7me4"]
+texture = ExtResource("1_7b7ux")
+margins = Vector2i(4, 9)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dxr6e"]
+sources/2 = SubResource("TileSetAtlasSource_f7me4")
+
+[sub_resource type="Animation" id="Animation_wq83y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC\'s/Ashton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(372, 139)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPC\'s/Althea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(359, 139)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPC\'s/Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(365, 126)]
+}
+
+[sub_resource type="Animation" id="Animation_7b7ux"]
+resource_name = "intro"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC\'s/Ashton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.36, 2.5, 3.18, 3.51, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(396.4, 139), Vector2(396.4, 127), Vector2(396.4, 114), Vector2(338, 114), Vector2(312, 114), Vector2(312, 130), Vector2(297, 130)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPC\'s/Althea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.35, 2.5, 2.86, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(383.4, 139), Vector2(383.4, 127), Vector2(383.4, 114), Vector2(325, 114), Vector2(312, 114), Vector2(312, 138), Vector2(297, 138)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPC\'s/Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(389.4, 126), Vector2(389.4, 114), Vector2(311.69867, 114), Vector2(311.69867, 133), Vector2(322, 133)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f7me4"]
+_data = {
+&"RESET": SubResource("Animation_wq83y"),
+&"intro": SubResource("Animation_7b7ux")
+}
+
+[node name="TrainScene" type="Node2D" unique_id=1298399808]
+script = ExtResource("1_f7me4")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=830471990]
+tile_set = SubResource("TileSet_dxr6e")
+format = 2
+layer_0/tile_data = PackedInt32Array(196615, 2, 0, 262151, 2, 1, 327687, 2, 2, 393223, 2, 3, 458759, 2, 4, 524295, 2, 5, 196616, 65538, 0, 262152, 65538, 1, 327688, 65538, 2, 393224, 65538, 3, 458760, 65538, 4, 524296, 65538, 5, 196617, 131074, 0, 262153, 131074, 1, 327689, 131074, 2, 393225, 131074, 3, 458761, 131074, 4, 524297, 131074, 5, 196618, 196610, 0, 262154, 196610, 1, 327690, 196610, 2, 393226, 196610, 3, 458762, 196610, 4, 524298, 196610, 5, 196619, 262146, 0, 262155, 262146, 1, 327691, 262146, 2, 393227, 262146, 3, 458763, 262146, 4, 524299, 262146, 5, 196620, 327682, 0, 262156, 327682, 1, 327692, 327682, 2, 393228, 327682, 3, 458764, 327682, 4, 524300, 327682, 5, 196621, 393218, 0, 262157, 393218, 1, 327693, 393218, 2, 393229, 393218, 3, 458765, 393218, 4, 524301, 393218, 5, 196622, 458754, 0, 262158, 458754, 1, 327694, 458754, 2, 393230, 458754, 3, 458766, 458754, 4, 524302, 458754, 5, 196623, 524290, 0, 262159, 524290, 1, 327695, 524290, 2, 393231, 524290, 3, 458767, 524290, 4, 524303, 524290, 5, 196624, 589826, 0, 262160, 589826, 1, 327696, 589826, 2, 393232, 589826, 3, 458768, 589826, 4, 524304, 589826, 5, 196625, 655362, 0, 262161, 655362, 1, 327697, 655362, 2, 393233, 655362, 3, 458769, 655362, 4, 524305, 655362, 5, 196626, 720898, 0, 262162, 720898, 1, 327698, 720898, 2, 393234, 720898, 3, 458770, 720898, 4, 524306, 720898, 5, 196627, 786434, 0, 262163, 786434, 1, 327699, 786434, 2, 393235, 786434, 3, 458771, 786434, 4, 524307, 786434, 5, 196628, 851970, 0, 262164, 851970, 1, 327700, 851970, 2, 393236, 851970, 3, 458772, 851970, 4, 524308, 851970, 5, 196629, 917506, 0, 262165, 917506, 1, 327701, 917506, 2, 393237, 917506, 3, 458773, 917506, 4, 524309, 917506, 5, 196630, 983042, 0, 262166, 983042, 1, 327702, 983042, 2, 393238, 983042, 3, 458774, 983042, 4, 524310, 983042, 5, 196631, 1048578, 0, 262167, 1048578, 1, 327703, 1048578, 2, 393239, 1048578, 3, 458775, 1048578, 4, 524311, 1048578, 5, 196632, 1114114, 0, 262168, 1114114, 1, 327704, 1114114, 2, 393240, 1114114, 3, 458776, 1114114, 4, 524312, 1114114, 5, 196633, 1179650, 0, 262169, 1179650, 1, 327705, 1179650, 2, 393241, 1179650, 3, 458777, 1179650, 4, 524313, 1179650, 5, 196634, 1245186, 0, 262170, 1245186, 1, 327706, 1245186, 2, 393242, 1245186, 3, 458778, 1245186, 4, 524314, 1245186, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=244859992]
+libraries/ = SubResource("AnimationLibrary_f7me4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=402873736]
+position = Vector2(272, 108)
+zoom = Vector2(4.185, 4.185)
+
+[node name="DialogueUI" parent="." unique_id=1971843003 instance=ExtResource("1_vhm72")]
+
+[node name="NPC\'s" type="Node2D" parent="." unique_id=1623844022]
+
+[node name="Ashton" type="Sprite2D" parent="NPC\'s" unique_id=961058408]
+z_index = 1
+position = Vector2(372, 139)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_f7me4")
+
+[node name="Althea" type="Sprite2D" parent="NPC\'s" unique_id=1453843171]
+position = Vector2(359, 139)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_f7me4")
+
+[node name="Player" type="Sprite2D" parent="NPC\'s" unique_id=293087270]
+position = Vector2(365, 126)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_f7me4")

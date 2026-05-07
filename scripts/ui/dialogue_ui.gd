@@ -9,32 +9,32 @@ signal dialogue_finished
 
 var dialogue_list: Array = []
 var current_line_index: int = 0
-var current_speaker: String = ""
+var auto_timer: Timer
 
 func _ready():
 	self.visible = false
 	choice_container.visible = false
-	next_button.pressed.connect(_on_next_button_pressed)
-	choice_container.get_node("AcceptButton").pressed.connect(_on_accept_button_pressed)
-	choice_container.get_node("RejectButton").pressed.connect(_on_reject_button_pressed)
+	next_button.visible = false
 
-func start_conversation(speakerName: String, lines: Array, _image_path: String = ""):
+	auto_timer = Timer.new()
+	auto_timer.wait_time = 1.5   # auto‑advance delay
+	auto_timer.one_shot = true
+	add_child(auto_timer)
+	auto_timer.timeout.connect(_on_auto_advance)
+
+func start_conversation(lines: Array):
 	dialogue_list = lines
 	current_line_index = 0
-	current_speaker = speakerName
 	show_dialogue()
 
 func show_dialogue():
 	self.visible = true
 	choice_container.visible = false
-	next_button.visible = true
+	next_button.visible = false
 
 	var frame = dialogue_list[current_line_index]
-	# Replace {player} placeholder with the actual registered name
-	var raw_name: String = frame.get("name", "")
-	var raw_text: String = frame.get("text", "")
-	name_label.text = raw_name.replace("{player}", Global.player_name)
-	text_label.text = raw_text.replace("{player}", Global.player_name)
+	name_label.text = frame.get("name", "").replace("{player}", Global.player_name)
+	text_label.text = frame.get("text", "").replace("{player}", Global.player_name)
 
 	var img_path = frame.get("portrait", "")
 	if img_path != "":
@@ -43,49 +43,71 @@ func show_dialogue():
 	else:
 		portrait.visible = false
 
-func _on_next_button_pressed():
+	# --- NEW: handle input frames ---
+	if frame.has("input") and frame["input"] == true:
+		choice_container.visible = true
+		for child in choice_container.get_children():
+			child.queue_free()
+
+		var input = LineEdit.new()
+		input.placeholder_text = "Type your identity..."
+		
+		# Enlarge the typing box
+		input.custom_minimum_size = Vector2(400, 40)  # width=400px, height=40px
+		input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		input.size_flags_vertical = Control.SIZE_FILL
+
+		choice_container.add_child(input)
+
+		var confirm_btn = Button.new()
+		confirm_btn.text = "Confirm"
+		confirm_btn.pressed.connect(func():
+			_on_input_confirmed(input.text))
+		choice_container.add_child(confirm_btn)
+
+		input.text_submitted.connect(func(value):
+			_on_input_confirmed(value))
+
+
+	elif frame.has("choices"):
+		choice_container.visible = true
+		for child in choice_container.get_children():
+			child.queue_free()
+		for option in frame["choices"]:
+			var btn = Button.new()
+			btn.text = option
+			btn.pressed.connect(func():
+				_on_choice_selected(option))
+			choice_container.add_child(btn)
+	else:
+		auto_timer.start()
+
+func _on_auto_advance():
 	current_line_index += 1
 	if current_line_index < dialogue_list.size():
 		show_dialogue()
 	else:
-		if current_speaker == "Quest Notice":
-			show_quest_choice()
-		else:
-			finish_dialogue()
-
-func show_quest_choice():
-	choice_container.visible = true
-	next_button.visible = false
-	name_label.text = "System"
-	text_label.text = "Will you accept their help, " + Global.player_name + "?"
-	portrait.visible = false
-
-func _on_accept_button_pressed() -> void:
-	Global.has_party = true
-	Global.difficulty = "Easy"
-	Global.story_stage = 3
-	var lines = [
-		{"name": "Narrator", "text": "Both join as party members. The girl offers healing support, while the boy serves as a tank, protecting the team.", "portrait": ""},
-		{"name": "{player}", "text": "Great, so… names?", "portrait": ""},
-		{"name": "Althea", "text": "Althea!", "portrait": "res://icon.svg"},
-		{"name": "Ashton", "text": "Name's Ashton. Looking forward to working with you, {player}!", "portrait": "res://icon.svg"}
-	]
-	start_conversation("Accept_route", lines)
-
-func _on_reject_button_pressed() -> void:
-	Global.has_party = false
-	Global.difficulty = "Hard"
-	Global.story_stage = 3
-	var lines = [
-		{"name": "Narrator", "text": "They exchange glances, bow awkwardly, and step back, leaving " + Global.player_name + " to continue alone.", "portrait": ""}
-	]
-	start_conversation("Reject_route", lines)
+		finish_dialogue()
 
 func finish_dialogue():
 	choice_container.visible = false
 	self.visible = false
 	Global.is_dialogue_active = false
 	dialogue_finished.emit()
-	var player = get_tree().current_scene.get_node_or_null("Player")
-	if player:
-		player.process_mode = Node.PROCESS_MODE_ALWAYS
+
+func _on_choice_selected(option: String):
+	print("Player chose: ", option)
+	current_line_index += 1
+	if current_line_index < dialogue_list.size():
+		show_dialogue()
+	else:
+		finish_dialogue()
+
+func _on_input_confirmed(text: String):
+	Global.player_name = text
+	print("Player identity set to: ", text)
+	current_line_index += 1
+	if current_line_index < dialogue_list.size():
+		show_dialogue()
+	else:
+		finish_dialogue()

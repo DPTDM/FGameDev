@@ -21,8 +21,11 @@ var projectile_scene: PackedScene
 var sword_swinging := false
 var swing_angle := 0.0
 var swing_dir := 1.0
+var can_control := true
+	
 const SWING_SPEED := 8.0
 const SWING_ARC := 90.0
+
 
 func update_weapon() -> void:
 	# Available weapons
@@ -65,6 +68,9 @@ func _ready() -> void:
 	health_bar.value = current_hp
 
 func _physics_process(delta: float) -> void:
+	
+	if not can_control:
+		return   # skip all input when cutscene is active
 	# Sprint toggle: hold Shift to run
 	if Input.is_action_pressed("sprint"):
 		speed = RUN_SPEED
@@ -99,6 +105,7 @@ func _input(event: InputEvent) -> void:
 			_swing_sword()
 
 func _swing_sword() -> void:
+	
 	if sword_swinging or swing_cooldown:
 		return
 	sword_swinging = true
@@ -138,6 +145,7 @@ func _swing_sword() -> void:
 		cd.start()
 		cd.timeout.connect(func(): swing_cooldown = false)
 	)
+
 func _fire_projectile() -> void:
 	if projectile_scene == null:
 		return

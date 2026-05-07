@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var next_area_path: String = "res://scenes/GameLevels/Areas/sitiodihsembr.tscn"
+@export var next_area_path: String = "res://scenes/CutScenes/TrainScene.tscn"
 @export var entry_group: String = "sitio_village_entrance"
 
 func _on_body_entered(body):
