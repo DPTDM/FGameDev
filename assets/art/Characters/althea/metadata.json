@@ -1,0 +1,35 @@
+{
+  "character": {
+    "id": "6098c0c4-e939-4083-a576-b38305515c44",
+    "name": "Althea Niel H. Capule (The Supporter)\nPhysical: A young girl with long, bright pink hair that stands out against the dark city. She has large, expressive eyes and a nervous but hopeful smile.\n\nCyber-Traditional Style: She wears a stylized Baro\u2019t Saya modified for adventure, featuring neon cyan linings along the embroidery.\n\nEquipment: A tall wooden staff strapped to her back, tipped with a glowing crystal that pulses when she casts [Heal] or [Haste].\n\nSprite Cues: Eager posture, often clutching her staff with both hands when idle.",
+    "prompt": "Althea Niel H. Capule (The Supporter)\nPhysical: A young girl with long, bright pink hair that stands out against the dark city. She has large, expressive eyes and a nervous but hopeful smile.\n\nCyber-Traditional Style: She wears a stylized Baro\u2019t Saya modified for adventure, featuring neon cyan linings along the embroidery.\n\nEquipment: A tall wooden staff strapped to her back, tipped with a glowing crystal that pulses when she casts [Heal] or [Haste].\n\nSprite Cues: Eager posture, often clutching her staff with both hands when idle.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-06T17:33:52.143578+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Breathing_Idle-7fbd573a": {
+        "south": [
+          "animations/Breathing_Idle-7fbd573a/south/frame_000.png",
+          "animations/Breathing_Idle-7fbd573a/south/frame_001.png",
+          "animations/Breathing_Idle-7fbd573a/south/frame_002.png",
+          "animations/Breathing_Idle-7fbd573a/south/frame_003.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T05:20:52.487456"
+}

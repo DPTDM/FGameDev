@@ -1,0 +1,60 @@
+{
+  "character": {
+    "id": "a9f0542a-d23a-4d1f-9c13-0157d6e03bf5",
+    "name": "Canon Andre L. Siaton (The Human Form / Antagonist)\nVisual Description: A young woman with a tired, fearful face. Her skin is noticeably pale and hollow as the hunger consumes her.\n\nOutfit: A simple, rustic townsperson\u2019s dress with a tattered dark shawl to blend into the shadows.\n\nWalk Animation: Moves with an uneven, tense, and hesitant gait.",
+    "prompt": "Canon Andre L. Siaton (The Human Form / Antagonist)\nVisual Description: A young woman with a tired, fearful face. Her skin is noticeably pale and hollow as the hunger consumes her.\n\nOutfit: A simple, rustic townsperson\u2019s dress with a tattered dark shawl to blend into the shadows.\n\nWalk Animation: Moves with an uneven, tense, and hesitant gait.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-07T06:13:39.290546+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Breathing_Idle-fa8b7d2b": {
+        "south": [
+          "animations/Breathing_Idle-fa8b7d2b/south/frame_000.png",
+          "animations/Breathing_Idle-fa8b7d2b/south/frame_001.png",
+          "animations/Breathing_Idle-fa8b7d2b/south/frame_002.png"
+        ]
+      },
+      "Walking-249592b4": {
+        "south": [
+          "animations/Walking-249592b4/south/frame_000.png",
+          "animations/Walking-249592b4/south/frame_001.png",
+          "animations/Walking-249592b4/south/frame_002.png",
+          "animations/Walking-249592b4/south/frame_003.png",
+          "animations/Walking-249592b4/south/frame_004.png",
+          "animations/Walking-249592b4/south/frame_005.png"
+        ],
+        "east": [
+          "animations/Walking-249592b4/east/frame_000.png",
+          "animations/Walking-249592b4/east/frame_001.png",
+          "animations/Walking-249592b4/east/frame_002.png",
+          "animations/Walking-249592b4/east/frame_003.png",
+          "animations/Walking-249592b4/east/frame_004.png",
+          "animations/Walking-249592b4/east/frame_005.png"
+        ],
+        "north": [
+          "animations/Walking-249592b4/north/frame_000.png",
+          "animations/Walking-249592b4/north/frame_001.png",
+          "animations/Walking-249592b4/north/frame_002.png",
+          "animations/Walking-249592b4/north/frame_003.png",
+          "animations/Walking-249592b4/north/frame_004.png",
+          "animations/Walking-249592b4/north/frame_005.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T09:07:58.697865"
+}

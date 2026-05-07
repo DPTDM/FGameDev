@@ -1,0 +1,74 @@
+{
+  "character": {
+    "id": "b47d566f-fc7c-4f06-8a9f-f6c82f957e89",
+    "name": "[Player] (The Rookie Hunter)\nVisual Description: A neutral but determined-looking hunter.\n\nOutfit: A dark, versatile hunter\u2019s jumpsuit with metallic plating and various pouches for gear.",
+    "prompt": "[Player] (The Rookie Hunter)\nVisual Description: A neutral but determined-looking hunter.\n\nOutfit: A dark, versatile hunter\u2019s jumpsuit with metallic plating and various pouches for gear.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-06T18:02:39.843226+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Walking-f0055e67": {
+        "east": [
+          "animations/Walking-f0055e67/east/frame_000.png",
+          "animations/Walking-f0055e67/east/frame_001.png",
+          "animations/Walking-f0055e67/east/frame_002.png",
+          "animations/Walking-f0055e67/east/frame_003.png",
+          "animations/Walking-f0055e67/east/frame_004.png",
+          "animations/Walking-f0055e67/east/frame_005.png"
+        ],
+        "south": [
+          "animations/Walking-f0055e67/south/frame_000.png",
+          "animations/Walking-f0055e67/south/frame_001.png",
+          "animations/Walking-f0055e67/south/frame_002.png",
+          "animations/Walking-f0055e67/south/frame_003.png",
+          "animations/Walking-f0055e67/south/frame_004.png"
+        ],
+        "north": [
+          "animations/Walking-f0055e67/north/frame_000.png",
+          "animations/Walking-f0055e67/north/frame_001.png",
+          "animations/Walking-f0055e67/north/frame_002.png",
+          "animations/Walking-f0055e67/north/frame_003.png",
+          "animations/Walking-f0055e67/north/frame_004.png",
+          "animations/Walking-f0055e67/north/frame_005.png"
+        ],
+        "west": [
+          "animations/Walking-f0055e67/west/frame_000.png",
+          "animations/Walking-f0055e67/west/frame_001.png",
+          "animations/Walking-f0055e67/west/frame_002.png",
+          "animations/Walking-f0055e67/west/frame_003.png",
+          "animations/Walking-f0055e67/west/frame_004.png",
+          "animations/Walking-f0055e67/west/frame_005.png"
+        ]
+      },
+      "Breathing_Idle-e6437a5b": {
+        "east": [
+          "animations/Breathing_Idle-e6437a5b/east/frame_000.png",
+          "animations/Breathing_Idle-e6437a5b/east/frame_001.png",
+          "animations/Breathing_Idle-e6437a5b/east/frame_002.png",
+          "animations/Breathing_Idle-e6437a5b/east/frame_003.png"
+        ],
+        "south": [
+          "animations/Breathing_Idle-e6437a5b/south/frame_000.png",
+          "animations/Breathing_Idle-e6437a5b/south/frame_001.png",
+          "animations/Breathing_Idle-e6437a5b/south/frame_002.png",
+          "animations/Breathing_Idle-e6437a5b/south/frame_003.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T03:38:20.362626"
+}

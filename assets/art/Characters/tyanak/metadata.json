@@ -1,0 +1,76 @@
+{
+  "character": {
+    "id": "434a8888-bf37-4763-8828-49e6cca7cc54",
+    "name": "Chanac (Tiyanak): Small, fast-moving, feral baby-like creatures with sharp fangs and dark, leathery skin. They move with a predatory \"scuttle\" animation.",
+    "prompt": "Chanac (Tiyanak): Small, fast-moving, feral baby-like creatures with sharp fangs and dark, leathery skin. They move with a predatory \"scuttle\" animation.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-07T08:23:17.772885+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Crouching-e51ea7b9": {
+        "east": [
+          "animations/Crouching-e51ea7b9/east/frame_000.png",
+          "animations/Crouching-e51ea7b9/east/frame_001.png",
+          "animations/Crouching-e51ea7b9/east/frame_002.png",
+          "animations/Crouching-e51ea7b9/east/frame_003.png",
+          "animations/Crouching-e51ea7b9/east/frame_004.png"
+        ],
+        "north": [
+          "animations/Crouching-e51ea7b9/north/frame_000.png",
+          "animations/Crouching-e51ea7b9/north/frame_001.png",
+          "animations/Crouching-e51ea7b9/north/frame_002.png",
+          "animations/Crouching-e51ea7b9/north/frame_003.png",
+          "animations/Crouching-e51ea7b9/north/frame_004.png"
+        ],
+        "south": [
+          "animations/Crouching-e51ea7b9/south/frame_000.png",
+          "animations/Crouching-e51ea7b9/south/frame_001.png",
+          "animations/Crouching-e51ea7b9/south/frame_002.png",
+          "animations/Crouching-e51ea7b9/south/frame_003.png",
+          "animations/Crouching-e51ea7b9/south/frame_004.png"
+        ]
+      },
+      "Crouched_Walking-ce65bff1": {
+        "south": [
+          "animations/Crouched_Walking-ce65bff1/south/frame_000.png",
+          "animations/Crouched_Walking-ce65bff1/south/frame_001.png",
+          "animations/Crouched_Walking-ce65bff1/south/frame_002.png",
+          "animations/Crouched_Walking-ce65bff1/south/frame_003.png",
+          "animations/Crouched_Walking-ce65bff1/south/frame_004.png",
+          "animations/Crouched_Walking-ce65bff1/south/frame_005.png"
+        ],
+        "north": [
+          "animations/Crouched_Walking-ce65bff1/north/frame_000.png",
+          "animations/Crouched_Walking-ce65bff1/north/frame_001.png",
+          "animations/Crouched_Walking-ce65bff1/north/frame_002.png",
+          "animations/Crouched_Walking-ce65bff1/north/frame_003.png",
+          "animations/Crouched_Walking-ce65bff1/north/frame_004.png",
+          "animations/Crouched_Walking-ce65bff1/north/frame_005.png"
+        ],
+        "east": [
+          "animations/Crouched_Walking-ce65bff1/east/frame_000.png",
+          "animations/Crouched_Walking-ce65bff1/east/frame_001.png",
+          "animations/Crouched_Walking-ce65bff1/east/frame_002.png",
+          "animations/Crouched_Walking-ce65bff1/east/frame_003.png",
+          "animations/Crouched_Walking-ce65bff1/east/frame_004.png",
+          "animations/Crouched_Walking-ce65bff1/east/frame_005.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T09:07:52.583019"
+}

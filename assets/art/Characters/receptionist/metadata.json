@@ -1,0 +1,35 @@
+{
+  "character": {
+    "id": "6ca07fae-92d2-4032-980b-a347810b184d",
+    "name": "The Guild Receptionist\nPhysical: A \"sharp-eyed\" woman with a professional, firm demeanor. Her hair is tied back in a tight, efficient bun.\n\nStyle: A sleek Anti-Mythics Guild uniform\u2014dark navy blue with a glowing holographic badge on her lapel.\n\nEquipment: Always seen holding or interacting with a glowing digital tablet.",
+    "prompt": "The Guild Receptionist\nPhysical: A \"sharp-eyed\" woman with a professional, firm demeanor. Her hair is tied back in a tight, efficient bun.\n\nStyle: A sleek Anti-Mythics Guild uniform\u2014dark navy blue with a glowing holographic badge on her lapel.\n\nEquipment: Always seen holding or interacting with a glowing digital tablet.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-06T17:51:46.999764+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Breathing_Idle-a5d9748d": {
+        "south": [
+          "animations/Breathing_Idle-a5d9748d/south/frame_000.png",
+          "animations/Breathing_Idle-a5d9748d/south/frame_001.png",
+          "animations/Breathing_Idle-a5d9748d/south/frame_002.png",
+          "animations/Breathing_Idle-a5d9748d/south/frame_003.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T05:20:45.963536"
+}

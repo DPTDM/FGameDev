@@ -1,0 +1,59 @@
+{
+  "character": {
+    "id": "975aa0c4-49ad-4916-ae9e-3e78299714ba",
+    "name": "Ashton Anton P. Montero (The Tank)\nPhysical: A tall, sturdy boy with short silver hair. He has a confident smirk and a calm, protective aura.\n\nCyber-Traditional Style: He wears heavy reinforced armor inspired by pre-colonial Filipino tribal warriors (like the Bagobo or Igorot armor), but made of matte grey steel with glowing green power strips.\n\nEquipment: A massive heavy shield on his left arm and a short combat blade. His armor has visible thrusters for his [Taunt] ability.\n\nSprite Cues: Sturdy stance, shield always positioned slightly forward.",
+    "prompt": "Ashton Anton P. Montero (The Tank)\nPhysical: A tall, sturdy boy with short silver hair. He has a confident smirk and a calm, protective aura.\n\nCyber-Traditional Style: He wears heavy reinforced armor inspired by pre-colonial Filipino tribal warriors (like the Bagobo or Igorot armor), but made of matte grey steel with glowing green power strips.\n\nEquipment: A massive heavy shield on his left arm and a short combat blade. His armor has visible thrusters for his [Taunt] ability.\n\nSprite Cues: Sturdy stance, shield always positioned slightly forward.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-06T17:38:11.882089+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Breathing_Idle-383c464e": {
+        "south": [
+          "animations/Breathing_Idle-383c464e/south/frame_000.png",
+          "animations/Breathing_Idle-383c464e/south/frame_001.png",
+          "animations/Breathing_Idle-383c464e/south/frame_002.png",
+          "animations/Breathing_Idle-383c464e/south/frame_003.png"
+        ],
+        "east": [
+          "animations/Breathing_Idle-383c464e/east/frame_000.png",
+          "animations/Breathing_Idle-383c464e/east/frame_001.png",
+          "animations/Breathing_Idle-383c464e/east/frame_002.png",
+          "animations/Breathing_Idle-383c464e/east/frame_003.png"
+        ]
+      },
+      "Walking-5cafbb6a": {
+        "east": [
+          "animations/Walking-5cafbb6a/east/frame_000.png",
+          "animations/Walking-5cafbb6a/east/frame_001.png",
+          "animations/Walking-5cafbb6a/east/frame_002.png",
+          "animations/Walking-5cafbb6a/east/frame_003.png",
+          "animations/Walking-5cafbb6a/east/frame_004.png",
+          "animations/Walking-5cafbb6a/east/frame_005.png"
+        ],
+        "south": [
+          "animations/Walking-5cafbb6a/south/frame_000.png",
+          "animations/Walking-5cafbb6a/south/frame_001.png",
+          "animations/Walking-5cafbb6a/south/frame_002.png",
+          "animations/Walking-5cafbb6a/south/frame_003.png",
+          "animations/Walking-5cafbb6a/south/frame_004.png",
+          "animations/Walking-5cafbb6a/south/frame_005.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T05:20:51.406548"
+}

@@ -1,0 +1,26 @@
+{
+  "character": {
+    "id": "c9888e8b-4eaa-47ec-af78-376b8ad4fd52",
+    "name": "Don Paul R. Ramirez (The Town Elder)\nPhysical: An older man with a serious, weathered face and grey hair. He stands with a slight slouch from age but has a sharp, commanding voice.\n\nStyle: Wears a traditional Barong Tagalog made of high-tech fiber, showing his status in the semi-advanced town of Beringan.",
+    "prompt": "Don Paul R. Ramirez (The Town Elder)\nPhysical: An older man with a serious, weathered face and grey hair. He stands with a slight slouch from age but has a sharp, commanding voice.\n\nStyle: Wears a traditional Barong Tagalog made of high-tech fiber, showing his status in the semi-advanced town of Beringan.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-06T17:49:38.731965+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {}
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T05:20:47.105145"
+}

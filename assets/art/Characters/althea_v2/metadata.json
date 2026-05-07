@@ -1,0 +1,61 @@
+{
+  "character": {
+    "id": "39ee3a09-d63f-468f-b536-20d388b7a8d6",
+    "name": "Althea Niel H. Capule (The Supporter)\nVisual Description: A young, petite female hunter with long, vibrant pink hair. She has large, expressive eyes and a nervous but hopeful smile.\n\nOutfit: A modified, high-tech Baro\u2019t Saya in soft lavender and blue, featuring neon cyan glow-strips along the embroidery.\n\nEquipment: A tall, gnarled wooden staff strapped to her back, tipped with a glowing crystal that pulses with energy.\n\nCombat Stance: Holds her staff forward with both hands; glowing cyan runes appear in the air when she casts [Heal] or [Haste].",
+    "prompt": "Althea Niel H. Capule (The Supporter)\nVisual Description: A young, petite female hunter with long, vibrant pink hair. She has large, expressive eyes and a nervous but hopeful smile.\n\nOutfit: A modified, high-tech Baro\u2019t Saya in soft lavender and blue, featuring neon cyan glow-strips along the embroidery.\n\nEquipment: A tall, gnarled wooden staff strapped to her back, tipped with a glowing crystal that pulses with energy.\n\nCombat Stance: Holds her staff forward with both hands; glowing cyan runes appear in the air when she casts [Heal] or [Haste].",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-07T05:48:52.945092+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Breathing_Idle-3ba5f77a": {
+        "south": [
+          "animations/Breathing_Idle-3ba5f77a/south/frame_000.png",
+          "animations/Breathing_Idle-3ba5f77a/south/frame_001.png",
+          "animations/Breathing_Idle-3ba5f77a/south/frame_002.png",
+          "animations/Breathing_Idle-3ba5f77a/south/frame_003.png"
+        ]
+      },
+      "Walking-62ce78e1": {
+        "south": [
+          "animations/Walking-62ce78e1/south/frame_000.png",
+          "animations/Walking-62ce78e1/south/frame_001.png",
+          "animations/Walking-62ce78e1/south/frame_002.png",
+          "animations/Walking-62ce78e1/south/frame_003.png",
+          "animations/Walking-62ce78e1/south/frame_004.png",
+          "animations/Walking-62ce78e1/south/frame_005.png"
+        ],
+        "north": [
+          "animations/Walking-62ce78e1/north/frame_000.png",
+          "animations/Walking-62ce78e1/north/frame_001.png",
+          "animations/Walking-62ce78e1/north/frame_002.png",
+          "animations/Walking-62ce78e1/north/frame_003.png",
+          "animations/Walking-62ce78e1/north/frame_004.png",
+          "animations/Walking-62ce78e1/north/frame_005.png"
+        ],
+        "east": [
+          "animations/Walking-62ce78e1/east/frame_000.png",
+          "animations/Walking-62ce78e1/east/frame_001.png",
+          "animations/Walking-62ce78e1/east/frame_002.png",
+          "animations/Walking-62ce78e1/east/frame_003.png",
+          "animations/Walking-62ce78e1/east/frame_004.png",
+          "animations/Walking-62ce78e1/east/frame_005.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-07T09:08:00.703417"
+}
