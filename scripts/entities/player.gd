@@ -28,7 +28,6 @@ const SWING_ARC := 90.0
 
 
 func update_weapon() -> void:
-	# Available weapons
 	var weapon_textures = {
 		"Sword": "res://assets/art/broadsword.png",
 		"Axe": "res://assets/art/battle-ax.png",
@@ -39,22 +38,20 @@ func update_weapon() -> void:
 	var keys = weapon_textures.keys()
 	var choice = keys[randi() % keys.size()]
 
-	# Assign texture
 	weapon.texture = load(weapon_textures[choice])
-	Global.specialization = choice   # keep specialization in sync
+	Global.player_specialization = choice   # ✅ correct property
 	print("Equipped:", choice)
 
-	# Orientation tweaks
 	match choice:
 		"Sword":
 			weapon.rotation_degrees = 90
 		"Staff":
 			weapon.rotation_degrees = 0
 		"Axe":
-			weapon.rotation_degrees = 45   # diagonal look
+			weapon.rotation_degrees = 45
 
 func _is_staff() -> bool:
-	return Global.specialization in ["Mage", "Supporter", "Staff"]
+	return Global.player_specialization in ["Mage", "Supporter", "Staff"]
 
 func _ready() -> void:
 	add_to_group("player")

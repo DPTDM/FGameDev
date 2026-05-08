@@ -23,6 +23,8 @@ func _ready():
 	auto_timer.timeout.connect(_on_auto_advance)
 
 func start_conversation(lines: Array):
+	print("DEBUG: start_conversation called with", lines.size(), "lines")
+	visible = true
 	dialogue_list = lines
 	current_line_index = 0
 	show_dialogue()
@@ -43,7 +45,7 @@ func show_dialogue():
 	else:
 		portrait.visible = false
 
-	# --- NEW: handle input frames ---
+	# --- handle input frames ---
 	if frame.has("input") and frame["input"] == true:
 		choice_container.visible = true
 		for child in choice_container.get_children():
@@ -51,12 +53,9 @@ func show_dialogue():
 
 		var input = LineEdit.new()
 		input.placeholder_text = "Type your identity..."
-		
-		# Enlarge the typing box
-		input.custom_minimum_size = Vector2(400, 40)  # width=400px, height=40px
+		input.custom_minimum_size = Vector2(400, 40)
 		input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		input.size_flags_vertical = Control.SIZE_FILL
-
 		choice_container.add_child(input)
 
 		var confirm_btn = Button.new()
@@ -68,7 +67,7 @@ func show_dialogue():
 		input.text_submitted.connect(func(value):
 			_on_input_confirmed(value))
 
-
+	# --- handle choice frames ---
 	elif frame.has("choices"):
 		choice_container.visible = true
 		for child in choice_container.get_children():
@@ -79,8 +78,35 @@ func show_dialogue():
 			btn.pressed.connect(func():
 				_on_choice_selected(option))
 			choice_container.add_child(btn)
+
+	# --- handle specialization dropdown ---
+	elif frame.has("specialization") and frame["specialization"] == true:
+		choice_container.visible = true
+		for child in choice_container.get_children():
+			child.queue_free()
+
+		var dropdown = OptionButton.new()
+		dropdown.custom_minimum_size = Vector2(200, 40)
+		dropdown.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+		dropdown.add_item("Hunter")
+		dropdown.add_item("Mage")
+		dropdown.add_item("Fighter")
+		dropdown.add_item("Supporter")
+		dropdown.add_item("Assassin")
+
+		choice_container.add_child(dropdown)
+
+		var confirm_btn = Button.new()
+		confirm_btn.text = "Confirm"
+		confirm_btn.pressed.connect(func():
+			_on_specialization_confirmed(dropdown.get_item_text(dropdown.selected)))
+		choice_container.add_child(confirm_btn)
+
+	# --- auto advance if no input/choices/specialization ---
 	else:
 		auto_timer.start()
+
 
 func _on_auto_advance():
 	current_line_index += 1
@@ -90,6 +116,7 @@ func _on_auto_advance():
 		finish_dialogue()
 
 func finish_dialogue():
+	
 	choice_container.visible = false
 	self.visible = false
 	Global.is_dialogue_active = false
@@ -106,6 +133,15 @@ func _on_choice_selected(option: String):
 func _on_input_confirmed(text: String):
 	Global.player_name = text
 	print("Player identity set to: ", text)
+	current_line_index += 1
+	if current_line_index < dialogue_list.size():
+		show_dialogue()
+	else:
+		finish_dialogue()
+
+func _on_specialization_confirmed(choice: String):
+	Global.player_specialization = choice
+	print("Player specialization set to: ", choice)
 	current_line_index += 1
 	if current_line_index < dialogue_list.size():
 		show_dialogue()

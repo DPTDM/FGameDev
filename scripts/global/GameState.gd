@@ -16,6 +16,11 @@ var selected_world: int = 0
 ## Index of the chosen level within the current world (0-based).
 var selected_level: int = 0
 
+# ─── Player identity ─────────────────────────────────────────────────────────
+var player_name: String = ""
+var story_stage: int = 0   # add this too if you want to track progression here
+
+
 # ─── Level completion tracking ───────────────────────────────────────────────
 # Structure: { world_index: { level_index: true/false } }
 

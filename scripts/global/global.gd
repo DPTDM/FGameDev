@@ -2,8 +2,8 @@ extends Node
 
 # ── Player Info ──────────────────────────────────────────────────────────────
 var player_name: String = "Hunter"
-var gender: String = ""
-var specialization: String = ""
+var player_gender: String = ""
+var player_specialization: String = ""
 
 # ── Player Stats ─────────────────────────────────────────────────────────────
 const MAX_HP: int = 150
