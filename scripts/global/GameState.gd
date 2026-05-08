@@ -20,6 +20,8 @@ var selected_level: int = 0
 var player_name: String = ""
 var story_stage: int = 0   # add this too if you want to track progression here
 
+# ─── Quest tracking ──────────────────────────────────────────────────────────
+var active_quest: String = ""   # holds the current quest title/ID
 
 # ─── Level completion tracking ───────────────────────────────────────────────
 # Structure: { world_index: { level_index: true/false } }
@@ -55,8 +57,13 @@ func _load_progress() -> void:
 		return
 	var raw = _config.get_value("progress", "level_completion", {})
 	_level_completion = raw
-
+	active_quest = _config.get_value("progress", "active_quest", "")
+	story_stage = _config.get_value("progress", "story_stage", 0)
+	player_name = _config.get_value("progress", "player_name", "")
 
 func _save_progress() -> void:
 	_config.set_value("progress", "level_completion", _level_completion)
+	_config.set_value("progress", "active_quest", active_quest)
+	_config.set_value("progress", "story_stage", story_stage)
+	_config.set_value("progress", "player_name", player_name)
 	_config.save(SAVE_PATH)

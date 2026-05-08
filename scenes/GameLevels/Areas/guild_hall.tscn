@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d2cu5s8tf1ngk" path="res://scripts/AreaScripts/GuildHall/guild_hall_entrance.gd" id="2_4nq27"]
 [ext_resource type="PackedScene" uid="uid://c5mwi1fin28kk" path="res://scenes/npcs/receptionist.tscn" id="3_ccxgq"]
 [ext_resource type="Script" uid="uid://2gn3it3g8ahr" path="res://scripts/AreaScripts/GuildHall/quest_board.gd" id="4_p4rf5"]
+[ext_resource type="Script" uid="uid://piecf4y5bjiq" path="res://scripts/AreaScripts/GuildHall/team_joins.gd" id="5_wy0cx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nq27"]
 texture = ExtResource("1_que1o")
@@ -784,6 +785,12 @@ size = Vector2(53, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4rf5"]
 size = Vector2(103, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy0cx"]
+size = Vector2(15, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiuaq"]
+size = Vector2(49, 15.5)
+
 [node name="GuildHall" type="Node2D" unique_id=1843519075]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=727141527]
@@ -827,6 +834,20 @@ offset_right = 779.0
 offset_bottom = 313.0
 scale = Vector2(0.52, 0.52)
 text = "Press [E] to Open"
+
+[node name="TeamJoins" type="Area2D" parent="Triggers" unique_id=274512499]
+script = ExtResource("5_wy0cx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/TeamJoins" unique_id=1746439649]
+position = Vector2(544.5, 326.5)
+shape = SubResource("RectangleShape2D_wy0cx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Triggers/TeamJoins" unique_id=309084995]
+position = Vector2(576.5, 303)
+shape = SubResource("RectangleShape2D_wiuaq")
+
+[node name="Marker2D" type="Marker2D" parent="Triggers/TeamJoins" unique_id=1566052859 groups=["after_join"]]
+position = Vector2(560, 319)
 
 [connection signal="body_entered" from="Triggers/GuildHall Entrance" to="Triggers/GuildHall Entrance" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/QuestBoard" to="Triggers/QuestBoard" method="_on_body_entered"]
