@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://c181eor6jo3rj"]
+
+[ext_resource type="Script" uid="uid://bsp5fdtbfmhuv" path="res://scripts/entities/boss.gd" id="1_g0bfu"]
+[ext_resource type="Texture2D" uid="uid://f81gmpgiim1c" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_000.png" id="1_woypx"]
+[ext_resource type="Texture2D" uid="uid://bkbkjkyieup0o" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_001.png" id="2_g0bfu"]
+[ext_resource type="Texture2D" uid="uid://cvj4w7knsgfcc" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_002.png" id="3_ssu7g"]
+[ext_resource type="Texture2D" uid="uid://cp2a7g1gwxsdn" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_003.png" id="4_phd7l"]
+[ext_resource type="Texture2D" uid="uid://b2a1udntmfw2w" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_004.png" id="5_mboqh"]
+[ext_resource type="Texture2D" uid="uid://cbmexc22eqvfb" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_005.png" id="6_q4kwk"]
+[ext_resource type="Texture2D" uid="uid://5iy6j3a6qgdg" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_006.png" id="7_mnine"]
+[ext_resource type="Texture2D" uid="uid://c5yjksf6kcv0x" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_007.png" id="8_c274t"]
+[ext_resource type="Texture2D" uid="uid://b7m0ffkv53l72" path="res://assets/art/Characters/boss/animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_008.png" id="9_ejpcq"]
+[ext_resource type="Texture2D" uid="uid://gshwn4wjy6ml" path="res://assets/art/Characters/boss/animations/Breathing_Idle-8dca6466/south/frame_000.png" id="10_nikc3"]
+[ext_resource type="Texture2D" uid="uid://c4brcikriqh3g" path="res://assets/art/Characters/boss/animations/Breathing_Idle-8dca6466/south/frame_001.png" id="11_akfac"]
+[ext_resource type="Texture2D" uid="uid://wtby2ugbqca5" path="res://assets/art/Characters/boss/animations/Breathing_Idle-8dca6466/south/frame_002.png" id="12_ahjo7"]
+[ext_resource type="Texture2D" uid="uid://bij7jq71qhg0k" path="res://assets/art/Characters/boss/animations/Breathing_Idle-8dca6466/south/frame_003.png" id="13_ol78g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3b16"]
+atlas = ExtResource("1_woypx")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wno5"]
+atlas = ExtResource("2_g0bfu")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imd86"]
+atlas = ExtResource("3_ssu7g")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmaji"]
+atlas = ExtResource("4_phd7l")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p045s"]
+atlas = ExtResource("5_mboqh")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3pu0"]
+atlas = ExtResource("6_q4kwk")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n87t"]
+atlas = ExtResource("7_mnine")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrgf0"]
+atlas = ExtResource("8_c274t")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7mob"]
+atlas = ExtResource("9_ejpcq")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n0tg"]
+atlas = ExtResource("10_nikc3")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ygh2"]
+atlas = ExtResource("11_akfac")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23rq4"]
+atlas = ExtResource("12_ahjo7")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30nm4"]
+atlas = ExtResource("13_ol78g")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pwpa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3b16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wno5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imd86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmaji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p045s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3pu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n87t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrgf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7mob")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n0tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ygh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23rq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30nm4")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[node name="Boss" type="CharacterBody2D" unique_id=1243550196]
+script = ExtResource("1_g0bfu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=745802342]
+sprite_frames = SubResource("SpriteFrames_2pwpa")
+animation = &"attack"
+frame = 7
+frame_progress = 0.3545212
+
+[node name="Physics Collider" type="CollisionShape2D" parent="." unique_id=386430723]
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=253249703]
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=721959225]
+
+[node name="Timers" type="Node" parent="." unique_id=402836513]
+
+[node name="AttackTimer" type="Timer" parent="Timers" unique_id=1933303771]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1643866307]
+
+[node name="LeftWingPoint" type="Marker2D" parent="." unique_id=1710476876]
+
+[node name="RightWingPoint" type="Marker2D" parent="." unique_id=1208954432]

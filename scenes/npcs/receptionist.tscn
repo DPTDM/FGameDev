@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5mwi1fin28kk"]
 
 [ext_resource type="Script" uid="uid://djsd0hforth0l" path="res://scripts/npcs/receptionist.gd" id="1_ana6h"]
-[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="1_d7yyo"]
+[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="1_d7yyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14ip1"]
 size = Vector2(500, 1100)
@@ -9,7 +9,7 @@ size = Vector2(500, 1100)
 [node name="Receptionist" type="Area2D" unique_id=985281554]
 script = ExtResource("1_ana6h")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=979808831]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=490109223]
 texture = ExtResource("1_d7yyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1752847035]

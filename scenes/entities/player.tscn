@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bqgvauv8o1rt3"]
 
 [ext_resource type="Script" uid="uid://cme0tt4hmqbhb" path="res://scripts/entities/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="2_42nxq"]
+[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="2_42nxq"]
 [ext_resource type="Script" uid="uid://dbcl0fvb00bou" path="res://scripts/entities/SwordHitbox.gd" id="2_swordhb"]
-[ext_resource type="Texture2D" uid="uid://dhln5hmko4lg" path="res://assets/art/broadsword.png" id="3_42nxq"]
+[ext_resource type="Texture2D" uid="uid://fg2jajfe6bqs" path="res://assets/art/broadsword.png" id="3_42nxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
 size = Vector2(58, 60)
@@ -13,9 +13,10 @@ height = 55.0
 
 [node name="Player" type="CharacterBody2D" unique_id=576924845]
 process_mode = 1
+y_sort_enabled = true
 script = ExtResource("1_cvnsp")
 
-[node name="VisualLook" type="Sprite2D" parent="." unique_id=237296834]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=1254165213]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_42nxq")
 

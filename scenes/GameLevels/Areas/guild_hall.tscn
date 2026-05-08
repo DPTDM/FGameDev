@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg5perqlffwew"]
 
-[ext_resource type="Texture2D" uid="uid://6xfiejb4e2tu" path="res://assets/art/Maps/GuildHall.png" id="1_que1o"]
+[ext_resource type="Texture2D" uid="uid://btthkb17t0qpl" path="res://assets/art/Maps/GuildHall.png" id="1_que1o"]
 [ext_resource type="Script" uid="uid://d2cu5s8tf1ngk" path="res://scripts/AreaScripts/GuildHall/guild_hall_entrance.gd" id="2_4nq27"]
 [ext_resource type="PackedScene" uid="uid://c5mwi1fin28kk" path="res://scenes/npcs/receptionist.tscn" id="3_ccxgq"]
 [ext_resource type="Script" uid="uid://2gn3it3g8ahr" path="res://scripts/AreaScripts/GuildHall/quest_board.gd" id="4_p4rf5"]
@@ -805,7 +805,7 @@ layer_0/tile_data = PackedInt32Array(589836, 65536, 0, 655372, 65536, 1, 720908,
 [node name="NPCs" type="Node2D" parent="." unique_id=1780994578]
 
 [node name="Receptionist" parent="NPCs" unique_id=985281554 instance=ExtResource("3_ccxgq")]
-position = Vector2(472.99997, 224.00002)
+position = Vector2(474, 224)
 scale = Vector2(0.1, 0.1)
 
 [node name="Triggers" type="Node2D" parent="." unique_id=1509329742]

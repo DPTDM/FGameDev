@@ -11,7 +11,6 @@ var current_hp := 100
 var swing_cooldown := false
 
 @onready var health_bar: TextureProgressBar = get_node("../HUD/Health")
-
 @onready var wpnPivot: Marker2D = $WeaponPivot
 @onready var wpnSlot: Marker2D = $WeaponPivot/WeaponSlot
 @onready var weapon: Sprite2D = $WeaponPivot/WeaponSlot/Weapon
@@ -65,9 +64,8 @@ func _ready() -> void:
 	health_bar.value = current_hp
 
 func _physics_process(delta: float) -> void:
-	
-	if not can_control:
-		return   # skip all input when cutscene is active
+
+		
 	# Sprint toggle: hold Shift to run
 	if Input.is_action_pressed("sprint"):
 		speed = RUN_SPEED
@@ -76,6 +74,11 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed if direction else velocity.move_toward(Vector2.ZERO, speed)
+	
+	# --- NEW ANIMATION LOGIC ---
+
+	# ---------------------------
+
 	move_and_slide()
 	look_at_mouse()
 
@@ -153,7 +156,15 @@ func _fire_projectile() -> void:
 
 func look_at_mouse() -> void:
 	wpnPivot.look_at(get_global_mouse_position())
-	weapon.flip_h = get_global_mouse_position().x < global_position.x
+	
+	# Check if mouse is to the left of the player
+	var is_mouse_left = get_global_mouse_position().x < global_position.x
+	
+	# Flip the weapon
+	weapon.flip_h = is_mouse_left
+	
+	# Flip the player's body
+
 
 # --- Health management ---
 func take_damage(amount: int) -> void:

@@ -1,0 +1,48 @@
+{
+  "character": {
+    "id": "6d1a2440-301f-48c1-8e9b-3d97c903b8da",
+    "name": "The Manananggal (The Boss)\nVisual Description: A beautiful yet grotesque girl representing the severed upper half of her body\n\nPhysical Traits: Massive, leathery black wings  in its backwith a sickening skeletal structure. Her fingers end in long, blood-stained claws.\n\nAbilities: Fast, erratic flight patterns and the ability to swoop low for slashing attacks. Features a red \"flicker\" effect to indicate rapid regeneration.",
+    "prompt": "The Manananggal (The Boss)\nVisual Description: A beautiful yet grotesque girl representing the severed upper half of her body\n\nPhysical Traits: Massive, leathery black wings  in its backwith a sickening skeletal structure. Her fingers end in long, blood-stained claws.\n\nAbilities: Fast, erratic flight patterns and the ability to swoop low for slashing attacks. Features a red \"flicker\" effect to indicate rapid regeneration.",
+    "size": {
+      "width": 68,
+      "height": 68
+    },
+    "template_id": "mannequin",
+    "directions": 4,
+    "view": "low top-down",
+    "created_at": "2026-05-07T08:49:10.257723+00:00"
+  },
+  "frames": {
+    "rotations": {
+      "south": "rotations/south.png",
+      "west": "rotations/west.png",
+      "east": "rotations/east.png",
+      "north": "rotations/north.png"
+    },
+    "animations": {
+      "Breathing_Idle-8dca6466": {
+        "south": [
+          "animations/Breathing_Idle-8dca6466/south/frame_000.png",
+          "animations/Breathing_Idle-8dca6466/south/frame_001.png",
+          "animations/Breathing_Idle-8dca6466/south/frame_002.png",
+          "animations/Breathing_Idle-8dca6466/south/frame_003.png"
+        ]
+      },
+      "Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd": {
+        "south": [
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_000.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_001.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_002.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_003.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_004.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_005.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_006.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_007.png",
+          "animations/Shooting_blood_spears_at_the_enemy_while_it_flaps-94f69fbd/south/frame_008.png"
+        ]
+      }
+    }
+  },
+  "export_version": "2.0",
+  "export_date": "2026-05-08T18:20:07.979572"
+}
