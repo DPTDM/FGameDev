@@ -4688,7 +4688,7 @@ shape = SubResource("RectangleShape2D_6mpfg")
 [node name="Train" type="Area2D" parent="Triggers" unique_id=520400439]
 script = ExtResource("3_yecve")
 
-[node name="Marker2D" type="Marker2D" parent="Triggers/Train" unique_id=2011777228]
+[node name="Marker2D" type="Marker2D" parent="Triggers/Train" unique_id=2011777228 groups=["outside_of_station"]]
 position = Vector2(577, 824)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Train" unique_id=1830498244]
