@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bylyhy2phk1ku" path="res://assets/art/Maps/Chase.png" id="1_5r4vf"]
 [ext_resource type="Script" uid="uid://0q1a2y804i5y" path="res://scripts/AreaScripts/boss_fight_scene.gd" id="1_iyxp7"]
-[ext_resource type="PackedScene" uid="uid://bqgvauv8o1rt3" path="res://scenes/entities/player.tscn" id="2_53fnc"]
 [ext_resource type="PackedScene" uid="uid://c181eor6jo3rj" path="res://scenes/entities/boss.tscn" id="3_53fnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyxp7"]
@@ -44,7 +43,7 @@ shape = SubResource("RectangleShape2D_iyxp7")
 
 [node name="Character" type="Node2D" parent="." unique_id=253434482]
 
-[node name="Player" parent="Character" unique_id=576924845 instance=ExtResource("2_53fnc")]
-
 [node name="Boss" parent="Character" unique_id=1243550196 instance=ExtResource("3_53fnc")]
 position = Vector2(1, -144)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=188130427 groups=["p_spawn"]]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bfdugwhimwsby" path="res://assets/art/Maps/forest_to_temple.png" id="1_qt5o1"]
 [ext_resource type="Script" uid="uid://buluid4akdhbe" path="res://scripts/AreaScripts/Forest/forest_entance.gd" id="2_led6e"]
+[ext_resource type="Script" uid="uid://6islng6ji4tg" path="res://scripts/AreaScripts/Chase/chase.gd" id="3_01a7f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_led6e"]
 texture = ExtResource("1_qt5o1")
@@ -1630,4 +1631,15 @@ shape = SubResource("RectangleShape2D_4tuox")
 [node name="Marker2D" type="Marker2D" parent="Triggers/ForestEntance" unique_id=622556269 groups=["forest_entrance"]]
 position = Vector2(185, 459)
 
+[node name="Chase" type="Area2D" parent="Triggers" unique_id=1113076526]
+script = ExtResource("3_01a7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Chase" unique_id=552553416]
+position = Vector2(750, 561)
+shape = SubResource("RectangleShape2D_4tuox")
+
+[node name="Marker2D" type="Marker2D" parent="Triggers/Chase" unique_id=426207935 groups=["Chase"]]
+position = Vector2(185, 459)
+
 [connection signal="body_entered" from="Triggers/ForestEntance" to="Triggers/ForestEntance" method="_on_body_entered"]
+[connection signal="body_entered" from="Triggers/Chase" to="Triggers/Chase" method="_on_body_entered"]
