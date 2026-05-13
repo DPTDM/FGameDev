@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bk3iu4xoxf81c"]
+
+[ext_resource type="Script" uid="uid://dyt0hqofq5rm5" path="res://scripts/ui/quest_tracker_hud.gd" id="1_hi7y6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hi7y6"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 0, 0.92156863)
+
+[node name="QuestTrackerHUD" type="CanvasLayer" unique_id=755904456]
+script = ExtResource("1_hi7y6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1182621814]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -309.0
+offset_right = -1.0
+offset_bottom = 102.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1307565172]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hi7y6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=255402431]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1811100568]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8200989, 0.82009876, 0, 1)
+text = "-[ ACTIVE QUEST ]-"
+
+[node name="ObjectiveLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1792543511]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+autowrap_mode = 3

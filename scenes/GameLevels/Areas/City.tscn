@@ -4676,6 +4676,7 @@ layer_0/tile_data = PackedInt32Array(131075, 0, 0, 196611, 0, 1, 262147, 0, 2, 3
 [node name="Triggers" type="Node2D" parent="." unique_id=566717751]
 
 [node name="Guild Hall" type="Area2D" parent="Triggers" unique_id=665823949]
+collision_mask = 2
 script = ExtResource("2_poiou")
 
 [node name="outsideGuildhall" type="Marker2D" parent="Triggers/Guild Hall" unique_id=575767613 groups=["outside_of_guildhall"]]
@@ -4686,6 +4687,7 @@ position = Vector2(408, 441)
 shape = SubResource("RectangleShape2D_6mpfg")
 
 [node name="Train" type="Area2D" parent="Triggers" unique_id=520400439]
+collision_mask = 2
 script = ExtResource("3_yecve")
 
 [node name="Marker2D" type="Marker2D" parent="Triggers/Train" unique_id=2011777228 groups=["outside_of_station"]]
@@ -4850,6 +4852,7 @@ build_mode = 1
 polygon = PackedVector2Array(-7, 17, 7, 17, 7, -18, -7, -18)
 
 [node name="Boundary" type="StaticBody2D" parent="." unique_id=990387116]
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary" unique_id=2145759129]
 polygon = PackedVector2Array(48, 864, 48, 32, 1248, 32, 1248, 597, 1246, 597, 1245, 34, 50, 35, 50, 864)

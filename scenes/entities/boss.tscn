@@ -119,27 +119,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ssu7g"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_phd7l"]
+radius = 46.0
+height = 98.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mboqh"]
+radius = 20.0
+
 [node name="Boss" type="CharacterBody2D" unique_id=1243550196]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_g0bfu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=745802342]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2pwpa")
-animation = &"attack"
-frame = 7
-frame_progress = 0.3545212
+animation = &"flying"
+autoplay = "flying"
+frame_progress = 0.09677899
 
 [node name="Physics Collider" type="CollisionShape2D" parent="." unique_id=386430723]
+shape = SubResource("CapsuleShape2D_ssu7g")
+debug_color = Color(0.7436613, 0.21354637, 0.9999998, 0.41960785)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=253249703]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1959795961]
+shape = SubResource("CapsuleShape2D_phd7l")
+debug_color = Color(0, 0.5882353, 0, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=721959225]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1857100417]
+shape = SubResource("CircleShape2D_mboqh")
+debug_color = Color(0.98039216, 0, 0, 0.41960785)
 
 [node name="Timers" type="Node" parent="." unique_id=402836513]
 
 [node name="AttackTimer" type="Timer" parent="Timers" unique_id=1933303771]
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1643866307]
+wait_time = 0.001
 
 [node name="LeftWingPoint" type="Marker2D" parent="." unique_id=1710476876]
 
 [node name="RightWingPoint" type="Marker2D" parent="." unique_id=1208954432]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -795,7 +795,7 @@ size = Vector2(49, 15.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=727141527]
 position = Vector2(473, 279)
-zoom = Vector2(2.305, 2.305)
+zoom = Vector2(2.5, 2.5)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1695237233]
 tile_set = SubResource("TileSet_ccxgq")
@@ -811,6 +811,7 @@ scale = Vector2(0.1, 0.1)
 [node name="Triggers" type="Node2D" parent="." unique_id=1509329742]
 
 [node name="GuildHall Entrance" type="Area2D" parent="Triggers" unique_id=602949770]
+collision_mask = 2
 script = ExtResource("2_4nq27")
 
 [node name="SpawnMarker" type="Marker2D" parent="Triggers/GuildHall Entrance" unique_id=2073827724 groups=["player_start_entrance"]]
@@ -821,6 +822,7 @@ position = Vector2(471.5, 364)
 shape = SubResource("RectangleShape2D_ccxgq")
 
 [node name="QuestBoard" type="Area2D" parent="Triggers" unique_id=432899011]
+collision_mask = 2
 script = ExtResource("4_p4rf5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/QuestBoard" unique_id=1129280890]
@@ -836,6 +838,7 @@ scale = Vector2(0.52, 0.52)
 text = "Press [E] to Open"
 
 [node name="TeamJoins" type="Area2D" parent="Triggers" unique_id=274512499]
+collision_mask = 2
 script = ExtResource("5_wy0cx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/TeamJoins" unique_id=1746439649]

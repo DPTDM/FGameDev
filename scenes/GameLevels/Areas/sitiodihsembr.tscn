@@ -2510,6 +2510,7 @@ scale = Vector2(0.1, 0.1)
 [node name="Triggers" type="Node2D" parent="." unique_id=394455706]
 
 [node name="VillageEntrance" type="Area2D" parent="Triggers" unique_id=1112824847]
+collision_mask = 2
 script = ExtResource("2_hmvno")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/VillageEntrance" unique_id=378484569]
@@ -2520,6 +2521,7 @@ shape = SubResource("RectangleShape2D_s0gbd")
 position = Vector2(442, 103)
 
 [node name="ForestEntance" type="Area2D" parent="Triggers" unique_id=254085555]
+collision_mask = 2
 script = ExtResource("4_853nd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/ForestEntance" unique_id=1403338785]
@@ -2578,6 +2580,9 @@ polygon = PackedVector2Array(206, 85, 206, 176, -245, 176, -245, 85)
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Boundaries/trees" unique_id=2136363600]
 build_mode = 1
 polygon = PackedVector2Array(298, 175, 298, -63, 308, -63, 308, -85, 566, -85, 566, 175, 483, 175, 483, 412, 483, 455, 422, 455, 422, 418, 408, 418, 408, 202, 408, 176, 408, 175)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Boundaries/trees" unique_id=1479707056]
+polygon = PackedVector2Array(255, 492, 439, 492, 439, 493, 255, 493)
 
 [node name="villagewall" type="StaticBody2D" parent="Boundaries" unique_id=2082002944]
 position = Vector2(199, 672)

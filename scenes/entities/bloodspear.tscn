@@ -1,19 +1,25 @@
 [gd_scene format=3 uid="uid://dvlykxc2w1law"]
 
-[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="1_4gon5"]
 [ext_resource type="Script" uid="uid://dxymixthp1cgd" path="res://scripts/entities/bloodspear.gd" id="1_b5g45"]
+[ext_resource type="Texture2D" uid="uid://dg3oo1ifgfx7r" path="res://assets/art/bloodspear..png" id="2_b5g45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5g45"]
-size = Vector2(124, 124)
+size = Vector2(6, 25)
 
 [node name="Bloodspear" type="Area2D" unique_id=1022309299]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_b5g45")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=52795503]
-texture = ExtResource("1_4gon5")
+texture = ExtResource("2_b5g45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=563092761]
-position = Vector2(1, 2)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_b5g45")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=25339888]
+rect = Rect2(-3, -12, 6, 25)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

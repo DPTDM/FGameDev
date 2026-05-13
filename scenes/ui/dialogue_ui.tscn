@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhrg8jpf1iybq"]
 
 [ext_resource type="Script" uid="uid://dyog8y7frtj67" path="res://scripts/ui/dialogue_ui.gd" id="1_q8n66"]
-[ext_resource type="FontFile" uid="uid://o4ewklarkkbq" path="res://fonts/Jersey15-Regular.ttf" id="2_font"]
+[ext_resource type="FontFile" uid="uid://s7unynxkw0gt" path="res://fonts/Jersey15-Regular.ttf" id="2_font"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
 content_margin_left = 16.0
@@ -51,6 +51,16 @@ custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
+[node name="Portrait" type="TextureRect" parent="DialogueControl/MarginContainer/Panel" unique_id=1585361238]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+offset_left = 3.0
+offset_top = -164.0
+offset_right = 256.0
+offset_bottom = -1.0
+size_flags_vertical = 4
+stretch_mode = 5
+
 [node name="ContentMargin" type="MarginContainer" parent="DialogueControl/MarginContainer/Panel" unique_id=1372142519]
 layout_mode = 1
 anchors_preset = 15
@@ -66,13 +76,6 @@ theme_override_constants/margin_bottom = 12
 [node name="HBox" type="HBoxContainer" parent="DialogueControl/MarginContainer/Panel/ContentMargin" unique_id=1366505538]
 layout_mode = 2
 theme_override_constants/separation = 16
-
-[node name="Portrait" type="TextureRect" parent="DialogueControl/MarginContainer/Panel/ContentMargin/HBox" unique_id=1585361238]
-visible = false
-custom_minimum_size = Vector2(120, 120)
-layout_mode = 2
-size_flags_vertical = 4
-stretch_mode = 5
 
 [node name="VBox" type="VBoxContainer" parent="DialogueControl/MarginContainer/Panel/ContentMargin/HBox" unique_id=405580083]
 layout_mode = 2
@@ -103,7 +106,7 @@ theme_override_constants/separation = 20
 [node name="NextButton" type="Button" parent="DialogueControl/MarginContainer/Panel/ContentMargin/HBox" unique_id=727052282]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 16
 text = "NEXT ▶"

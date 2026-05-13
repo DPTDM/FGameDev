@@ -804,6 +804,7 @@ layer_0/tile_data = PackedInt32Array(196613, 0, 99, 262149, 0, 100, 327685, 0, 1
 [node name="Triggers" type="Node2D" parent="." unique_id=2091083041]
 
 [node name="TrainEntrance" type="Area2D" parent="Triggers" unique_id=983252196]
+collision_mask = 2
 script = ExtResource("2_ahrtg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/TrainEntrance" unique_id=844326865]
@@ -814,6 +815,7 @@ shape = SubResource("RectangleShape2D_spkon")
 position = Vector2(497, 173)
 
 [node name="StationEntrance" type="Area2D" parent="Triggers" unique_id=346967812]
+collision_mask = 2
 script = ExtResource("2_k4kjo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/StationEntrance" unique_id=1131570997]
@@ -825,7 +827,7 @@ position = Vector2(134, 280)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1776414746]
 position = Vector2(382, 217)
-zoom = Vector2(2.175, 2.175)
+zoom = Vector2(3, 3)
 
 [node name="Buildings" type="Node" parent="." unique_id=877053456]
 

@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED := 500.0
+const SPEED := 800.0
 const DAMAGE := 3
 
 var direction := Vector2.RIGHT

@@ -10,6 +10,7 @@ var max_hp := 100
 var current_hp := 100
 var swing_cooldown := false
 
+@export var game_over_scene: PackedScene
 @onready var health_bar: TextureProgressBar = get_node("../HUD/Health")
 @onready var wpnPivot: Marker2D = $WeaponPivot
 @onready var wpnSlot: Marker2D = $WeaponPivot/WeaponSlot
@@ -64,7 +65,12 @@ func _ready() -> void:
 	health_bar.value = current_hp
 
 func _physics_process(delta: float) -> void:
-
+	# --- NEW: Freeze check ---
+	# If we lose control or a dialogue is active, stop moving instantly!
+	if not can_control or Global.is_dialogue_active:
+		velocity = Vector2.ZERO
+		move_and_slide() # We still call this so collision resolves, but velocity is 0
+		return # This skips the rest of the movement code below!
 		
 	# Sprint toggle: hold Shift to run
 	if Input.is_action_pressed("sprint"):
@@ -75,27 +81,14 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed if direction else velocity.move_toward(Vector2.ZERO, speed)
 	
-	# --- NEW ANIMATION LOGIC ---
-
-	# ---------------------------
-
 	move_and_slide()
 	look_at_mouse()
 
-	#if sword_swinging:
-		#swing_angle += swing_dir * SWING_SPEED * delta * 60.0
-		#wpnSlot.rotation_degrees = swing_angle
-		#if abs(swing_angle) >= SWING_ARC:
-			#swing_dir *= -1.0
-			#if swing_angle < 0.0:
-				#sword_swinging = false
-				#swing_angle = 0.0
-				#wpnSlot.rotation_degrees = 0.0
-				#sword_hitbox.set_deferred("monitoring", false)
-				#sword_hitbox.get_node("CollisionShape2D").set_deferred("disabled", true)
-				#sword_hitbox.reset_swing()
-
 func _input(event: InputEvent) -> void:
+	# --- NEW: Prevent attacking during dialogue ---
+	if not can_control or Global.is_dialogue_active:
+		return 
+		
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and event.pressed:
@@ -171,6 +164,22 @@ func take_damage(amount: int) -> void:
 	current_hp = max(current_hp - amount, 0)
 	health_bar.value = current_hp
 	print("HP:", current_hp, "/", max_hp)
+	
+	if current_hp <= 0:
+		die()
+
+func die() -> void:
+	print("Player has died!")
+	can_control = false 
+	
+	# Stop everything! (Freezes the boss, the treadmill, and the player)
+	get_tree().paused = true 
+	
+	# Summon the Game Over screen
+	if game_over_scene != null:
+		var go_screen = game_over_scene.instantiate()
+		# Add it to the very top of the game tree so it renders over everything
+		get_tree().root.add_child(go_screen)
 
 func heal(amount: int) -> void:
 	current_hp = min(current_hp + amount, max_hp)

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dwhhfji1mg3a4"]
+
+[ext_resource type="Script" uid="uid://dh18v6plug2op" path="res://scripts/ui/warning_line.gd" id="1_0b7l4"]
+
+[node name="WarningLine" type="ColorRect" unique_id=1855422307]
+offset_right = 20.0
+offset_bottom = 1000.0
+color = Color(0.7372549, 0, 0, 0.8235294)
+script = ExtResource("1_0b7l4")

@@ -7,6 +7,7 @@
 size = Vector2(500, 1100)
 
 [node name="Receptionist" type="Area2D" unique_id=985281554]
+collision_mask = 2
 script = ExtResource("1_ana6h")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=490109223]

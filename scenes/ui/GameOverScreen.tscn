@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dob6qr2wafubo"]
+
+[ext_resource type="Script" uid="uid://e0b0tx8s0g45" path="res://scripts/ui/game_over_screen.gd" id="1_0pcqs"]
+
+[node name="GameOverScreen" type="CanvasLayer" unique_id=1548525499]
+process_mode = 3
+script = ExtResource("1_0pcqs")
+
+[node name="Control" type="Control" parent="." unique_id=586662093]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1724885474]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 1336.0
+offset_bottom = 768.0
+color = Color(0.004709033, 0.0070635495, 0.004709033, 0.41960785)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1488765754]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=789286477]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7372549, 0, 0.03529412, 1)
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=1944964448]
+layout_mode = 2
+text = "TRY AGAIN"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=2029083408]
+layout_mode = 2
+text = "GIVE UP"
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

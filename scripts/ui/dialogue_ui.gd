@@ -4,12 +4,17 @@ signal dialogue_finished
 @onready var name_label: Label = $DialogueControl/MarginContainer/Panel/ContentMargin/HBox/VBox/NameLabel
 @onready var text_label: RichTextLabel = $DialogueControl/MarginContainer/Panel/ContentMargin/HBox/VBox/TextLabel
 @onready var choice_container: HBoxContainer = $DialogueControl/MarginContainer/Panel/ContentMargin/HBox/VBox/ChoiceContainer
-@onready var portrait: TextureRect = $DialogueControl/MarginContainer/Panel/ContentMargin/HBox/Portrait
+@onready var portrait: TextureRect = $DialogueControl/MarginContainer/Panel/Portrait
 @onready var next_button: Button = $DialogueControl/MarginContainer/Panel/ContentMargin/HBox/NextButton
 
 var dialogue_list: Array = []
 var current_line_index: int = 0
 var auto_timer: Timer
+
+# --- VN Settings ---
+@export var text_speed: float = 0.03
+var is_typing: bool = false
+var current_text: String = ""
 
 func _ready():
 	self.visible = false
@@ -22,9 +27,25 @@ func _ready():
 	add_child(auto_timer)
 	auto_timer.timeout.connect(_on_auto_advance)
 
+func _input(event: InputEvent) -> void:
+	# Allows the player to click to skip typing or advance the text manually like a VN!
+	if self.visible and (event.is_action_pressed("interact") or (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT)):
+		if is_typing:
+			# Skip the typewriter effect
+			is_typing = false
+			text_label.visible_characters = -1
+		elif not choice_container.visible:
+			# If text is done and there are no choices on screen, advance to the next line
+			auto_timer.stop()
+			_on_auto_advance()
+
 func start_conversation(lines: Array):
 	print("DEBUG: start_conversation called with", lines.size(), "lines")
 	visible = true
+	
+	# --- NEW: Lock the player! ---
+	Global.is_dialogue_active = true 
+	
 	dialogue_list = lines
 	current_line_index = 0
 	show_dialogue()
@@ -36,7 +57,11 @@ func show_dialogue():
 
 	var frame = dialogue_list[current_line_index]
 	name_label.text = frame.get("name", "").replace("{player}", Global.player_name)
-	text_label.text = frame.get("text", "").replace("{player}", Global.player_name)
+
+	# Setup the text for the typewriter effect
+	current_text = frame.get("text", "").replace("{player}", Global.player_name)
+	text_label.text = current_text
+	text_label.visible_characters = 0
 
 	var img_path = frame.get("portrait", "")
 	if img_path != "":
@@ -45,6 +70,25 @@ func show_dialogue():
 	else:
 		portrait.visible = false
 
+	# Start the typing animation
+	is_typing = true
+	_type_text(frame)
+
+func _type_text(frame: Dictionary):
+	# Loop to reveal characters one by one
+	while text_label.visible_characters < current_text.length():
+		if not is_typing:
+			break # Break the loop if the player clicked to skip
+		text_label.visible_characters += 1
+		await get_tree().create_timer(text_speed).timeout
+		
+	text_label.visible_characters = -1 # Ensure all text is fully visible
+	is_typing = false
+	
+	# Only show choices or inputs AFTER the text finishes typing!
+	_on_typing_finished(frame)
+
+func _on_typing_finished(frame: Dictionary):
 	# --- handle input frames ---
 	if frame.has("input") and frame["input"] == true:
 		choice_container.visible = true
@@ -105,8 +149,8 @@ func show_dialogue():
 
 	# --- auto advance if no input/choices/specialization ---
 	else:
+		# It will wait 1.5 seconds, OR the player can click to advance instantly
 		auto_timer.start()
-
 
 func _on_auto_advance():
 	current_line_index += 1
@@ -116,7 +160,6 @@ func _on_auto_advance():
 		finish_dialogue()
 
 func finish_dialogue():
-	
 	choice_container.visible = false
 	self.visible = false
 	Global.is_dialogue_active = false

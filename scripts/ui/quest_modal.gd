@@ -1,10 +1,11 @@
 extends PopupPanel
 
-@onready var quest1_button = $"TabContainer/F-Rank/Quest 1"
-@onready var quest1_details = $"TabContainer/F-Rank/QuestDetails1"
-@onready var quest_description = $"TabContainer/F-Rank/QuestDetails1/VBox/QuestDescription"
-@onready var accept_button = $"TabContainer/F-Rank/QuestDetails1/VBox/HBox/Accept"
-@onready var back_button = $"TabContainer/F-Rank/QuestDetails1/VBox/HBox/Back"
+@onready var quest1_button = $"TabContainer/F-Rank/MarginContainer/Quest 1"
+@onready var quest1_details = $"TabContainer/F-Rank/MarginContainer/QuestDetails1"
+# Ensure this path matches your new RichTextLabel!
+@onready var quest_description = $"TabContainer/F-Rank/MarginContainer/QuestDetails1/VBox/QuestDescription" 
+@onready var accept_button = $"TabContainer/F-Rank/MarginContainer/QuestDetails1/VBox/HBox/Accept"
+@onready var back_button = $"TabContainer/F-Rank/MarginContainer/QuestDetails1/VBox/HBox/Back"
 
 func _ready():
 	popup_centered()
@@ -17,13 +18,21 @@ func _on_quest1_pressed():
 	print("Quest 1 pressed, showing details")
 	quest1_button.hide()
 	quest1_details.show()
-	quest_description.text = """[Quest Notice]
-Rank: F
-Date: 1 Day Ago
-Report: Local civilians have reported strange cases of people failing to wake up.
-Casualties: Two victims confirmed dead.
-Findings: Autopsy reports indicate their organs were consumed from within, though no external wounds were found. Cause unknown.
-"""
+	
+	# Using BBCode to create a beautiful, structured layout!
+	quest_description.text = """[center][b][color=gold]Investigate mysterious deaths in Beringan[/color][/b][/center]
+
+[center][img width=600]res://assets/art/Maps/SitioDihsembr.png[/img][/center]
+
+[b]Rank:[/b] F
+[b]Date:[/b] 1 Day Ago
+
+[b]Report:[/b] Local civilians have reported strange cases of people failing to wake up.
+[b]Location:[/b] Beringan Town
+[b]Casualties:[/b] Two victims confirmed dead.
+[b]Findings:[/b] Autopsy reports indicate their organs were consumed from within, though no external wounds were found.
+
+[color=red]Cause unknown.[/color]"""
 
 func _on_accept_pressed():
 	GameState.active_quest = "Investigate mysterious deaths in Beringan"

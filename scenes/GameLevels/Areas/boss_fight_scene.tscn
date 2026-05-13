@@ -1,49 +1,58 @@
 [gd_scene format=3 uid="uid://ctu46h730hth"]
 
 [ext_resource type="Texture2D" uid="uid://bylyhy2phk1ku" path="res://assets/art/Maps/Chase.png" id="1_5r4vf"]
-[ext_resource type="Script" uid="uid://0q1a2y804i5y" path="res://scripts/AreaScripts/boss_fight_scene.gd" id="1_iyxp7"]
+[ext_resource type="Script" uid="uid://0q1a2y804i5y" path="res://scripts/AreaScripts/Chase/boss_fight_scene.gd" id="1_iyxp7"]
+[ext_resource type="PackedScene" uid="uid://cfcgppru0plxw" path="res://scenes/ui/demo_complete_screen.tscn" id="2_1iqnt"]
 [ext_resource type="PackedScene" uid="uid://c181eor6jo3rj" path="res://scenes/entities/boss.tscn" id="3_53fnc"]
+[ext_resource type="PackedScene" uid="uid://dwhhfji1mg3a4" path="res://scenes/ui/warning_line.tscn" id="4_kf3py"]
+[ext_resource type="PackedScene" uid="uid://dvlykxc2w1law" path="res://scenes/entities/bloodspear.tscn" id="5_1iqnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyxp7"]
 size = Vector2(201, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53fnc"]
+size = Vector2(139, 774)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf3py"]
-size = Vector2(138, 392)
+size = Vector2(138, 773)
 
 [node name="BossFightScene" type="Node2D" unique_id=246533473]
 script = ExtResource("1_iyxp7")
+demo_complete_scene = ExtResource("2_1iqnt")
+
+[node name="InvisibleArea" type="StaticBody2D" parent="." unique_id=880661307]
+collision_mask = 0
+
+[node name="toplayer" type="CollisionShape2D" parent="InvisibleArea" unique_id=178449744]
+position = Vector2(1, -187)
+shape = SubResource("RectangleShape2D_iyxp7")
+
+[node name="bottomlayer" type="CollisionShape2D" parent="InvisibleArea" unique_id=1031584708]
+position = Vector2(0, 566)
+shape = SubResource("RectangleShape2D_iyxp7")
+
+[node name="leftlayer" type="CollisionShape2D" parent="InvisibleArea" unique_id=1560888997]
+position = Vector2(-169.5, 190)
+shape = SubResource("RectangleShape2D_53fnc")
+
+[node name="rightlayer" type="CollisionShape2D" parent="InvisibleArea" unique_id=1714724912]
+position = Vector2(170, 189.5)
+shape = SubResource("RectangleShape2D_kf3py")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=392733806]
 
 [node name="ScrollingForest" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1456025692]
-motion_mirroring = Vector2(0, 512)
+motion_mirroring = Vector2(0, 380)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ScrollingForest" unique_id=1859006277]
 texture = ExtResource("1_5r4vf")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1000076693]
-
-[node name="InvisibleArea" type="StaticBody2D" parent="." unique_id=880661307]
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="InvisibleArea" unique_id=58184471]
-position = Vector2(1, 185)
-shape = SubResource("RectangleShape2D_iyxp7")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="InvisibleArea" unique_id=549356350]
-position = Vector2(-169, -1)
-shape = SubResource("RectangleShape2D_kf3py")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleArea" unique_id=854516900]
-position = Vector2(170, -1)
-shape = SubResource("RectangleShape2D_kf3py")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="InvisibleArea" unique_id=178449744]
-position = Vector2(1, -187)
-shape = SubResource("RectangleShape2D_iyxp7")
 
 [node name="Character" type="Node2D" parent="." unique_id=253434482]
 
 [node name="Boss" parent="Character" unique_id=1243550196 instance=ExtResource("3_53fnc")]
 position = Vector2(1, -144)
+warning_line_scene = ExtResource("4_kf3py")
+blood_spear_scene = ExtResource("5_1iqnt")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=188130427 groups=["p_spawn"]]
+position = Vector2(2, 262)

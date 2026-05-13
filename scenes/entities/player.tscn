@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bqgvauv8o1rt3"]
 
 [ext_resource type="Script" uid="uid://cme0tt4hmqbhb" path="res://scripts/entities/player.gd" id="1_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://dob6qr2wafubo" path="res://scenes/ui/GameOverScreen.tscn" id="2_5u6hq"]
 [ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="2_42nxq"]
 [ext_resource type="Script" uid="uid://dbcl0fvb00bou" path="res://scripts/entities/SwordHitbox.gd" id="2_swordhb"]
 [ext_resource type="Texture2D" uid="uid://fg2jajfe6bqs" path="res://assets/art/broadsword.png" id="3_42nxq"]
+[ext_resource type="PackedScene" uid="uid://bk3iu4xoxf81c" path="res://scenes/ui/quest_tracker_hud.tscn" id="6_d4qa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
 size = Vector2(58, 60)
@@ -14,7 +16,10 @@ height = 55.0
 [node name="Player" type="CharacterBody2D" unique_id=576924845]
 process_mode = 1
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_cvnsp")
+game_over_scene = ExtResource("2_5u6hq")
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=1254165213]
 scale = Vector2(0.5, 0.5)
@@ -39,8 +44,8 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_42nxq")
 
 [node name="SwordHitbox" type="Area2D" parent="WeaponPivot/WeaponSlot" unique_id=-993047285]
-collision_layer = 4
-collision_mask = 2
+collision_layer = 2
+collision_mask = 4
 monitoring = false
 script = ExtResource("2_swordhb")
 
@@ -49,3 +54,5 @@ position = Vector2(30, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_sword")
 disabled = true
+
+[node name="QuestTrackerHUD" parent="." unique_id=755904456 instance=ExtResource("6_d4qa6")]

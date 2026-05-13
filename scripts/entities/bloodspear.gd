@@ -1,22 +1,27 @@
 extends Area2D
 
-var speed := 400.0
+var speed := 350.0
 var direction := Vector2.DOWN
-var damage := 15
-
-func _ready() -> void:
-	# Delete the spear if it flies off the screen
-	$VisibleOnScreenNotifier2D.screen_exited.connect(queue_free)
-	
-	# Connect the hitbox
-	body_entered.connect(_on_body_entered)
+var damage := 20
+# --- Attack Variables ---
+@export var blood_spear_scene: PackedScene 
+@export var fire_rate := 1.5               
+var attack_timer := 0.0
 
 func _physics_process(delta: float) -> void:
-	# Move the spear
-	position += direction * speed * delta
+	# Fly endlessly in the assigned direction
+	global_position += direction * speed * delta
+	
+	# Optional: Make the spear point in the direction it's flying
+	rotation = direction.angle() + deg_to_rad(90) 
 
+# --- Signals ---
 func _on_body_entered(body: Node2D) -> void:
-	# Check if it hit the player or party members
-	if body.is_in_group("player") and body.has_method("take_damage"):
-		body.take_damage(damage)
-		queue_free() # Destroy the spear on impact
+	# Only hit the player!
+	if body.is_in_group("player"):
+		if body.has_method("take_damage"):
+			body.take_damage(damage) 
+		queue_free()
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
