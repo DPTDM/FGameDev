@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbwx3hak2fwrf"]
 
-[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="1_d7ufd"]
+[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="1_d7ufd"]
 [ext_resource type="Script" uid="uid://cfdfxlpgcawbm" path="res://scripts/entities/ghoul.gd" id="1_j6ogh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6ogh"]
@@ -10,7 +10,8 @@ size = Vector2(130, 128)
 size = Vector2(94, 94)
 
 [node name="Ghoul" type="CharacterBody2D" unique_id=768642121]
-collision_layer = 2
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_j6ogh")
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=654818287]
