@@ -5,7 +5,7 @@ extends Area2D
 
 func _ready():
 	body_entered.connect(_on_body_entered)
-
+#THIS A TEST
 func _on_body_entered(body):
 	if body.name == "Player":
 		# Only activate if quest accepted
