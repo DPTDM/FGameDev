@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://bbwx3hak2fwrf"]
 
 [ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="1_d7ufd"]
-[ext_resource type="Script" uid="uid://cfdfxlpgcawbm" path="res://scripts/entities/ghoul.gd" id="1_j6ogh"]
+[ext_resource type="Script" uid="uid://qg87lqq0twqq" path="res://scripts/entities/universal_enemy.gd" id="1_j6ogh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6ogh"]
 size = Vector2(130, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74vkl"]
-size = Vector2(94, 94)
+size = Vector2(131, 129)
 
 [node name="Ghoul" type="CharacterBody2D" unique_id=768642121]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_j6ogh")
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=654818287]
@@ -32,16 +32,8 @@ shape = SubResource("RectangleShape2D_j6ogh")
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackTelegraph" unique_id=1396238698]
-position = Vector2(124, 2)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_74vkl")
-
-[node name="ColorRect" type="ColorRect" parent="AttackTelegraph" unique_id=2048023608]
-offset_left = 76.0
-offset_top = -45.0
-offset_right = 116.0
-offset_bottom = -5.0
-scale = Vector2(2.415, 2.415)
-color = Color(1, 0, 0, 0.6862745)
 
 [node name="DMGLabel" type="Label" parent="." unique_id=1706672923]
 z_index = 100
@@ -50,3 +42,5 @@ offset_top = -89.0
 offset_right = 38.0
 offset_bottom = -66.0
 text = "TEST"
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
