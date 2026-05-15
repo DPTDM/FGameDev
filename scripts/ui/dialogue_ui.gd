@@ -22,7 +22,7 @@ func _ready():
 	next_button.visible = false
 
 	auto_timer = Timer.new()
-	auto_timer.wait_time = 1.5   # auto‑advance delay
+	auto_timer.wait_time = 1.5   # auto-advance delay
 	auto_timer.one_shot = true
 	add_child(auto_timer)
 	auto_timer.timeout.connect(_on_auto_advance)
@@ -39,13 +39,27 @@ func _input(event: InputEvent) -> void:
 			auto_timer.stop()
 			_on_auto_advance()
 
-func start_conversation(lines: Array):
+# BUG FIX: start_conversation previously required exactly one argument (Array).
+# Several callers (TutorialWorld, quest_board, registration) were passing two
+# arguments (String title, Array lines), causing a runtime error.
+# The fix makes the first parameter optional: if it is a String it is treated
+# as a title/label (ignored at runtime, kept for readability) and the second
+# parameter is used as the lines array. If only one argument is supplied and
+# it is an Array, the original single-argument path is used.
+func start_conversation(lines_or_title, lines_array: Array = []) -> void:
+	var lines: Array
+	if lines_or_title is Array:
+		lines = lines_or_title
+	else:
+		# First arg was a String label; use the second arg as the lines array
+		lines = lines_array
+
 	print("DEBUG: start_conversation called with", lines.size(), "lines")
 	visible = true
-	
-	# --- NEW: Lock the player! ---
-	Global.is_dialogue_active = true 
-	
+
+	# Lock the player
+	Global.is_dialogue_active = true
+
 	dialogue_list = lines
 	current_line_index = 0
 	show_dialogue()
@@ -81,10 +95,10 @@ func _type_text(frame: Dictionary):
 			break # Break the loop if the player clicked to skip
 		text_label.visible_characters += 1
 		await get_tree().create_timer(text_speed).timeout
-		
+
 	text_label.visible_characters = -1 # Ensure all text is fully visible
 	is_typing = false
-	
+
 	# Only show choices or inputs AFTER the text finishes typing!
 	_on_typing_finished(frame)
 

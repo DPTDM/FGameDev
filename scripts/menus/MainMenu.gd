@@ -12,16 +12,16 @@ func _ready() -> void:
 
 
 func _on_play_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/PlayMenu.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/PlayMenu.tscn")
 
 
 func _on_tutorial_pressed() -> void:
 	MenuMusic.stop()
-	SceneTransition.fade_to("res://scenes/world/TutorialWorld.tscn")
+	TransitionScreen.fade_to("res://scenes/world/TutorialWorld.tscn")
 
 
 func _on_settings_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/SettingsMenu.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/SettingsMenu.tscn")
 
 
 func _on_quit_pressed() -> void:

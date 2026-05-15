@@ -13,20 +13,20 @@ func _ready() -> void:
 
 
 func _on_back_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/MainMenu.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/MainMenu.tscn")
 
 
 func _on_characters_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/CharacterSelect.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/CharacterSelect.tscn")
 
 
 func _on_worlds_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/WorldSelect.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/WorldSelect.tscn")
 
 
 func _on_weapons_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/WeaponsMenu.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/WeaponsMenu.tscn")
 
 
 func _on_items_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/ItemsMenu.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/ItemsMenu.tscn")

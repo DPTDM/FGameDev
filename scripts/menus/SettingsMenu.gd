@@ -49,4 +49,4 @@ func _save_settings(volume: float) -> void:
 
 
 func _on_back_pressed() -> void:
-	SceneTransition.fade_to("res://scenes/menus/MainMenu.tscn")
+	TransitionScreen.fade_to("res://scenes/menus/MainMenu.tscn")
