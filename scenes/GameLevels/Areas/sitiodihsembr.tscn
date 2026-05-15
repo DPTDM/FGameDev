@@ -2507,10 +2507,6 @@ layer_0/tile_data = PackedInt32Array(131078, 0, 0, 196614, 0, 1, 262150, 0, 2, 3
 
 [node name="NPCs" type="Node2D" parent="." unique_id=292870251]
 
-[node name="Ghoul" parent="NPCs" unique_id=768642121 instance=ExtResource("3_yfkxj")]
-position = Vector2(224, 372)
-scale = Vector2(0.1, 0.1)
-
 [node name="Tanod" parent="NPCs" unique_id=1944876763 instance=ExtResource("3_4bosr")]
 position = Vector2(724, 340)
 scale = Vector2(0.125, 0.125)
@@ -2744,6 +2740,20 @@ polygon = PackedVector2Array(-527, -507, -527, -513, -490, -513, -490, -507)
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Boundaries/Objects" unique_id=752247042]
 build_mode = 1
 polygon = PackedVector2Array(-609, -507, -609, -513, -572, -513, -572, -507)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=64050962]
+
+[node name="Ghoul" parent="Enemies" unique_id=768642121 instance=ExtResource("3_yfkxj")]
+position = Vector2(269, 611)
+scale = Vector2(0.1, 0.1)
+
+[node name="Ghoul2" parent="Enemies" unique_id=1201332575 instance=ExtResource("3_yfkxj")]
+position = Vector2(224, 372)
+scale = Vector2(0.1, 0.1)
+
+[node name="Ghoul3" parent="Enemies" unique_id=1928639727 instance=ExtResource("3_yfkxj")]
+position = Vector2(383, 422)
+scale = Vector2(0.1, 0.1)
 
 [connection signal="body_entered" from="Triggers/VillageEntrance" to="Triggers/VillageEntrance" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/ForestEntance" to="Triggers/ForestEntance" method="_on_body_entered"]

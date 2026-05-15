@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dha35igl83cqf" path="res://scenes/npcs/background_npc.tscn" id="2_4tuox"]
 [ext_resource type="Script" uid="uid://buluid4akdhbe" path="res://scripts/AreaScripts/Forest/forest_entance.gd" id="2_led6e"]
 [ext_resource type="Script" uid="uid://dg2rwfdpi6mro" path="res://scripts/AreaScripts/Chase/chase.gd" id="3_01a7f"]
+[ext_resource type="PackedScene" uid="uid://bbwx3hak2fwrf" path="res://scenes/npcs/Ghoul.tscn" id="5_f44un"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f44un"]
 texture = ExtResource("1_4tuox")
@@ -1657,6 +1658,24 @@ shape = SubResource("RectangleShape2D_4tuox")
 
 [node name="Marker2D" type="Marker2D" parent="Triggers/Chase" unique_id=426207935 groups=["Chase"]]
 position = Vector2(185, 459)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=79817414]
+
+[node name="Ghoul" parent="Enemies" unique_id=768642121 instance=ExtResource("5_f44un")]
+position = Vector2(376, 541)
+scale = Vector2(0.125, 0.125)
+
+[node name="Ghoul2" parent="Enemies" unique_id=147247898 instance=ExtResource("5_f44un")]
+position = Vector2(241, 175)
+scale = Vector2(0.125, 0.125)
+
+[node name="Ghoul3" parent="Enemies" unique_id=96531140 instance=ExtResource("5_f44un")]
+position = Vector2(781, 180)
+scale = Vector2(0.125, 0.125)
+
+[node name="Ghoul4" parent="Enemies" unique_id=1591088199 instance=ExtResource("5_f44un")]
+position = Vector2(880, 384)
+scale = Vector2(0.125, 0.125)
 
 [connection signal="body_entered" from="Triggers/ForestEntance" to="Triggers/ForestEntance" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Chase" to="Triggers/Chase" method="_on_body_entered"]

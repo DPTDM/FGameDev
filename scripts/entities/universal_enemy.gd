@@ -3,13 +3,13 @@ extends CharacterBody2D
 # --- UNIVERSAL INSPECTOR VARIABLES ---
 @export_category("Enemy Stats")
 @export var enemy_name: String = "Enemy"
-@export var max_health: int = 100
+@export var max_health: int = 50
 @export var movement_speed: float = 60.0
-@export var attack_damage: int = 15
+@export var attack_damage: int = 5
 
 @export_category("AI Ranges")
-@export var detection_range: float = 250.0  # How close player must be to trigger chase
-@export var attack_range: float = 50.0      # How close to actually land a hit
+@export var detection_range: float = 100.0  # How close player must be to trigger chase
+@export var attack_range: float = 25.0      # How close to actually land a hit
 @export var attack_cooldown: float = 1.5    # Seconds between attacks
 
 # --- INTERNAL VARIABLES ---
