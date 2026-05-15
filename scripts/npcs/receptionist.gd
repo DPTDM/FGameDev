@@ -10,6 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		is_player_in_range = true
 		prompt_label.visible = true
+	
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
@@ -17,16 +18,15 @@ func _on_body_exited(body: Node2D) -> void:
 		prompt_label.visible = false
 
 func _input(event: InputEvent) -> void:
-	# BUG FIX: Use current_scene.get_node_or_null instead of hardcoded absolute path
-	# "/root/GamePlay/DialogueUI" breaks if the scene root is named anything else.
-	var ui = get_tree().current_scene.get_node_or_null("DialogueUI")
+	var ui = get_node_or_null("/root/GamePlay/DialogueUI")
 	if ui and ui.visible:
 		return
+
 	if is_player_in_range and event.is_action_pressed("interact"):
 		start_receptionist_dialogue()
 
 func start_receptionist_dialogue() -> void:
-	var ui = get_tree().current_scene.get_node_or_null("DialogueUI")
+	var ui = get_node_or_null("/root/GamePlay/DialogueUI")
 	if ui == null:
 		return
 
@@ -41,6 +41,7 @@ func start_receptionist_dialogue() -> void:
 			]
 			ui.start_conversation(reg_script)
 			await ui.dialogue_finished
+			# 👇 ensure stage advances
 			if GameState.story_stage == 0:
 				GameState.story_stage = 1
 			print("DEBUG: Receptionist finished, stage =", GameState.story_stage)

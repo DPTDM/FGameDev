@@ -1,28 +1,24 @@
-extends Area2D
+extends StaticBody2D
 
 var is_player_in_range: bool = false
 
-@onready var prompt_label: Label = $InteractionLabel
+@onready var quest_area: Area2D = $InteractionArea
 
 func _ready() -> void:
-	prompt_label.visible = false
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	quest_area.body_entered.connect(_on_player_entered)
+	quest_area.body_exited.connect(_on_player_exited)
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_player_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		is_player_in_range = true
-		prompt_label.visible = true
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_player_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		is_player_in_range = false
-		prompt_label.visible = false
 
 func _input(event: InputEvent) -> void:
 	if is_player_in_range and event.is_action_pressed("interact"):
-		if GameState.story_stage >= 1:
-			start_quest_dialogue()
+		start_quest_dialogue()
 
 func start_quest_dialogue() -> void:
 	var ui = get_tree().current_scene.get_node_or_null("DialogueUI")
@@ -37,5 +33,5 @@ func start_quest_dialogue() -> void:
 		{"name": "Narrator", "text": "Beside her stands a tall boy with short silver hair, clad in reinforced armor. A heavy shield rests on his arm, and his calm expression radiates confidence.", "portrait": ""},
 		{"name": "Silver Hair Boy", "text": "And I'll be your shield. If something tries to tear you apart, it'll have to go through me first.", "portrait": "res://icon.svg"}
 	]
-	GameState.story_stage = 2
-	ui.start_conversation(full_script)
+	Global.story_stage = 2
+	ui.start_conversation("Quest Notice", full_script)

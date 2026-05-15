@@ -1,43 +1,29 @@
 extends Area2D
 
-var is_player_in_range: bool = false
-
 @onready var prompt_label: Label = $InteractionLabel
-
-func _ready() -> void:
+var is_player_in_range: bool = false
+var quest_modal_scene = preload("res://scenes/ui/quest_modal.tscn")  # adjust path
+	
+func _ready():
 	prompt_label.visible = false
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D):
 	if body.name == "Player":
 		is_player_in_range = true
 		prompt_label.visible = true
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(body: Node2D):
 	if body.name == "Player":
 		is_player_in_range = false
 		prompt_label.visible = false
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent):
 	if is_player_in_range and event.is_action_pressed("interact"):
-		if GameState.story_stage >= 1:
-			start_quest_dialogue()
+		if GameState.story_stage == 1:   # only usable after Receptionist
+			print("DEBUG: E pressed near QuestBoard")
+			open_quest_modal()
 
-func start_quest_dialogue() -> void:
-	var ui = get_tree().current_scene.get_node_or_null("DialogueUI")
-	if ui == null:
-		return
-	var full_script = [
-		{"name": "Quest Board", "text": "[Quest Notice]\nRank: F...", "portrait": ""},
-		{"name": "Narrator", "text": "The first is a pink-haired girl with a staff strapped to her back. She smiles nervously, clutching it tightly.", "portrait": ""},
-		{"name": "Pink-Haired Girl", "text": "Hello! Could we perhaps join you?", "portrait": "res://icon.svg"},
-		{"name": "Narrator", "text": "Then, as if afraid of rejection, she quickly adds,", "portrait": ""},
-		{"name": "Pink-Haired Girl", "text": "I-I can heal you if you're ever in trouble!", "portrait": "res://icon.svg"},
-		{"name": "Narrator", "text": "Beside her stands a tall boy with short silver hair, clad in reinforced armor. A heavy shield rests on his arm, and his calm expression radiates confidence.", "portrait": ""},
-		{"name": "Silver Hair Boy", "text": "And I'll be your shield. If something tries to tear you apart, it'll have to go through me first.", "portrait": "res://icon.svg"}
-	]
-	# BUG FIX: was Global.story_stage; must use GameState.story_stage
-	GameState.story_stage = 2
-	# BUG FIX: start_conversation() takes one argument only
-	ui.start_conversation(full_script)
+func open_quest_modal():
+	var modal = quest_modal_scene.instantiate()
+	get_tree().current_scene.add_child(modal)
+	modal.popup_centered()   # sets visible + centers

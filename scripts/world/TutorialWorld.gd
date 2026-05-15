@@ -38,10 +38,7 @@ func _ready() -> void:
 
 	await get_tree().create_timer(0.4).timeout
 	Global.is_dialogue_active = true
-	# BUG FIX: was dialogue_ui.start_conversation("Tutorial", TUTORIAL_LINES) — two-arg form
-	# crashed because start_conversation only accepted one Array argument.
-	# Now passes the array directly (dialogue_ui.gd patched to accept both forms).
-	dialogue_ui.start_conversation(TUTORIAL_LINES)
+	dialogue_ui.start_conversation("Tutorial", TUTORIAL_LINES)
 	dialogue_ui.dialogue_finished.connect(_on_dialogue_finished, CONNECT_ONE_SHOT)
 
 func _on_dialogue_finished() -> void:
@@ -114,4 +111,4 @@ func _on_settings() -> void:
 func _on_exit() -> void:
 	get_tree().paused = false
 	MenuMusic.play_main_menu()
-	TransitionScreen.fade_to("res://scenes/menus/MainMenu.tscn")
+	SceneTransition.fade_to("res://scenes/menus/MainMenu.tscn")

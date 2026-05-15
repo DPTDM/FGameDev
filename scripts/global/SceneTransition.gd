@@ -1,16 +1,16 @@
 extends CanvasLayer
 
-# TransitionScreen.gd
+# SceneTransition.gd
 # Autoload singleton that provides a smooth fade-to-black transition
 # between any two scenes.
 #
 # Register in Project Settings → Autoload:
-#   Path: res://scripts/global/TransitionScreen.gd
+#   Path: res://scripts/global/SceneTransition.gd
 #   Name: SceneTransition
 #
 # Usage from any script:
-#   TransitionScreen.fade_to("res://scenes/menus/PlayMenu.tscn")
-#   TransitionScreen.fade_to("res://scenes/world/guild_hall.tscn", 1.5)
+#   SceneTransition.fade_to("res://scenes/menus/PlayMenu.tscn")
+#   SceneTransition.fade_to("res://scenes/world/guild_hall.tscn", 1.5)
 
 signal transition_finished
 

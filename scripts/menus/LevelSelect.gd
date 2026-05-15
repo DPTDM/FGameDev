@@ -117,9 +117,9 @@ func _on_level_selected(level_index: int) -> void:
 	if Engine.has_singleton("GameState"):
 		Engine.get_singleton("GameState").selected_level = level_index
 	# Change to the actual gameplay scene here.
-	# TransitionScreen.fade_to("res://scenes/GameLevel.tscn")
+	# SceneTransition.fade_to("res://scenes/GameLevel.tscn")
 	print("Starting World %d — Level %d" % [world_index + 1, level_index + 1])
 
 
 func _on_back_pressed() -> void:
-	TransitionScreen.fade_to("res://scenes/menus/WorldSelect.tscn")
+	SceneTransition.fade_to("res://scenes/menus/WorldSelect.tscn")

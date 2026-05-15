@@ -24,5 +24,5 @@ func _on_menu() -> void:
 	Global.player_defense = 0
 	Global.active_effects.clear()
 	menu_requested.emit()
-	TransitionScreen.fade_to("res://scenes/menus/MainMenu.tscn")
+	SceneTransition.fade_to("res://scenes/menus/MainMenu.tscn")
 	queue_free()

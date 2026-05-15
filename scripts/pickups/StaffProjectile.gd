@@ -7,10 +7,8 @@ var direction := Vector2.RIGHT
 var _has_hit := false  # BUG FIX: prevent double-damage from area+body both firing
 
 func _ready() -> void:
-	# Layer 4 = Projectile. Mask 3 = Enemies only (NOT layer 2 = Player).
-	# BUG FIX: mask was 2 (Player layer), causing player's own projectiles to hit themselves.
 	collision_layer = 4
-	collision_mask = 3
+	collision_mask = 2
 	area_entered.connect(_on_area_entered)
 	body_entered.connect(_on_body_entered)
 	get_tree().create_timer(3.0).timeout.connect(queue_free)
@@ -22,9 +20,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if _has_hit:
 		return
 	var parent = area.get_parent()
-	# Safety check: never damage the player
-	if parent.is_in_group("player"):
-		return
 	if parent.has_method("take_damage"):
 		_has_hit = true
 		parent.take_damage(DAMAGE, true)
@@ -32,9 +27,6 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if _has_hit:
-		return
-	# Safety check: never damage the player
-	if body.is_in_group("player"):
 		return
 	if body.has_method("take_damage"):
 		_has_hit = true

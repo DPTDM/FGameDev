@@ -52,4 +52,4 @@ func _on_settings() -> void:
 func _on_exit() -> void:
 	get_tree().paused = false
 	MenuMusic.play_main_menu()
-	TransitionScreen.fade_to("res://scenes/menus/MainMenu.tscn")
+	SceneTransition.fade_to("res://scenes/menus/MainMenu.tscn")

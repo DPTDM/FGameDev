@@ -18,9 +18,7 @@ var active_effects: Array = []
 var has_party: bool = false
 var difficulty: String = ""
 var is_dialogue_active: bool = false
-# BUG FIX: story_stage removed from Global — GameState.story_stage is the single
-# authoritative source. Keeping it here caused desync between Global.story_stage
-# and GameState.story_stage, leading to quest triggers never firing.
+var story_stage: int = 0
 
 # ── Apply damage to player (defense absorbs first) ───────────────────────────
 func apply_damage_to_player(amount: int) -> void:
