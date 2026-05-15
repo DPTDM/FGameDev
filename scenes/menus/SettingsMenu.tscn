@@ -1,109 +1,112 @@
-[gd_scene load_steps=3 format=3 uid="uid://settings_menu"]
+[gd_scene format=3 uid="uid://ddwm6ti0yvh8k"]
 
-[ext_resource type="Script" path="res://scripts/menus/SettingsMenu.gd" id="1"]
-[ext_resource type="FontFile" path="res://fonts/Jersey15-Regular.ttf" id="2"]
+[ext_resource type="Script" uid="uid://b8nwfwotpmd2e" path="res://scripts/menus/SettingsMenu.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://o4ewklarkkbq" path="res://fonts/Jersey15-Regular.ttf" id="2"]
 
-[node name="SettingsMenu" type="Control"]
+[node name="SettingsMenu" type="Control" unique_id=1265685286]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=628201427]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 color = Color(0.08, 0.08, 0.12, 1)
-mouse_filter = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=779482347]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=178533049]
 texture_filter = 1
-layout_mode = 2
 custom_minimum_size = Vector2(400, 0)
-theme_override_constants/separation = 24
+layout_mode = 2
 mouse_filter = 2
+theme_override_constants/separation = 24
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=500182766]
 texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.3, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 40
 text = "SETTINGS"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 40
-theme_override_fonts/font = ExtResource("2")
-theme_override_colors/font_color = Color(0.9, 0.85, 0.3, 1)
 
-[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=860313117]
 texture_filter = 1
-layout_mode = 2
 custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
 
-[node name="VolumeSection" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="VolumeSection" type="VBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=253939925]
 texture_filter = 1
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 10
-mouse_filter = 2
 
-[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/VolumeSection"]
+[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/VolumeSection" unique_id=1789741601]
 texture_filter = 1
 layout_mode = 2
-text = "In-Game Volume"
-theme_override_font_sizes/font_size = 24
-theme_override_fonts/font = ExtResource("2")
 theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
-
-[node name="VolumeRow" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VolumeSection"]
-texture_filter = 1
-layout_mode = 2
-theme_override_constants/separation = 16
-mouse_filter = 2
-
-[node name="VolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/VolumeSection/VolumeRow"]
-texture_filter = 1
-layout_mode = 2
-custom_minimum_size = Vector2(300, 36)
-size_flags_horizontal = 3
-min_value = 0.0
-max_value = 100.0
-value = 80.0
-step = 1.0
-
-[node name="VolumeValueLabel" type="Label" parent="CenterContainer/VBoxContainer/VolumeSection/VolumeRow"]
-texture_filter = 1
-layout_mode = 2
-custom_minimum_size = Vector2(50, 0)
-text = "80%"
-theme_override_font_sizes/font_size = 22
 theme_override_fonts/font = ExtResource("2")
-theme_override_colors/font_color = Color(0.9, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "In-Game Volume"
 
-[node name="MoreSettingsSoon" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="VolumeRow" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VolumeSection" unique_id=416167146]
 texture_filter = 1
 layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="VolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/VolumeSection/VolumeRow" unique_id=3500156]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 80.0
+
+[node name="VolumeValueLabel" type="Label" parent="CenterContainer/VBoxContainer/VolumeSection/VolumeRow" unique_id=1819096702]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.3, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 22
+text = "80%"
+
+[node name="MoreSettingsSoon" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1307228235]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.55, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 18
 text = "More settings coming soon..."
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 18
-theme_override_fonts/font = ExtResource("2")
-theme_override_colors/font_color = Color(0.5, 0.5, 0.55, 1)
 
-[node name="BackButton" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="." unique_id=287725870]
 texture_filter = 1
 layout_mode = 1
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 140.0
 offset_bottom = 55.0
-text = "← Back"
-theme_override_font_sizes/font_size = 22
 theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 22
+text = "← Back"

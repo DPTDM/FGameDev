@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://7g6u01vlx8v7"]
+
+[ext_resource type="Script" uid="uid://dpvqj3xd72ga3" path="res://scripts/ui/Pause.gd" id="1_ucw7k"]
+[ext_resource type="PackedScene" uid="uid://ddwm6ti0yvh8k" path="res://scenes/menus/SettingsMenu.tscn" id="2_dsxsa"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=607261374]
+script = ExtResource("1_ucw7k")
+
+[node name="Panel" type="Panel" parent="." unique_id=1846087307]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=484533963]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -29.5
+offset_right = 28.5
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=712279051]
+layout_mode = 2
+text = "Paused"
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=1866301717]
+custom_minimum_size = Vector2(500, 25)
+layout_mode = 2
+text = "Resume"
+
+[node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=920667323]
+custom_minimum_size = Vector2(500, 25)
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitToTitle" type="Button" parent="Panel/VBoxContainer" unique_id=2082883087]
+custom_minimum_size = Vector2(500, 25)
+layout_mode = 2
+text = "Quit To Title"
+
+[node name="SettingsMenu" parent="." unique_id=698391053 instance=ExtResource("2_dsxsa")]

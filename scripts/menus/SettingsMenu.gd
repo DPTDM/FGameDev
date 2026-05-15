@@ -49,4 +49,9 @@ func _save_settings(volume: float) -> void:
 
 
 func _on_back_pressed() -> void:
-	TransitionScreen.fade_to("res://scenes/menus/MainMenu.tscn")
+	# Hide the settings menu
+	visible = false
+	
+	# Show the pause menu panel again
+	var pause_menu = get_parent()
+	pause_menu.panel.visible = true
