@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c181eor6jo3rj" path="res://scenes/entities/boss.tscn" id="3_53fnc"]
 [ext_resource type="PackedScene" uid="uid://dwhhfji1mg3a4" path="res://scenes/ui/warning_line.tscn" id="4_kf3py"]
 [ext_resource type="PackedScene" uid="uid://dvlykxc2w1law" path="res://scenes/entities/bloodspear.tscn" id="5_1iqnt"]
+[ext_resource type="PackedScene" uid="uid://b4v02wf544sug" path="res://scenes/entities/obstacle.tscn" id="7_2nvpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyxp7"]
 size = Vector2(201, 20)
@@ -19,6 +20,7 @@ size = Vector2(138, 773)
 [node name="BossFightScene" type="Node2D" unique_id=246533473]
 script = ExtResource("1_iyxp7")
 demo_complete_scene = ExtResource("2_1iqnt")
+obstacle_scene = ExtResource("7_2nvpx")
 
 [node name="InvisibleArea" type="StaticBody2D" parent="." unique_id=880661307]
 collision_mask = 0
@@ -56,3 +58,14 @@ blood_spear_scene = ExtResource("5_1iqnt")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=188130427 groups=["p_spawn"]]
 position = Vector2(2, 262)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1775701072]
+
+[node name="FadeScreen" type="ColorRect" parent="CanvasLayer" unique_id=450437279]
+modulate = Color(0, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

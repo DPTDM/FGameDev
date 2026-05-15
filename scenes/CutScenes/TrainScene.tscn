@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c0wshj7hg0l6b"]
 
-[ext_resource type="Texture2D" uid="uid://wpo1lrfnwb8f" path="res://assets/art/Maps/insidetrain.png" id="1_7b7ux"]
+[ext_resource type="Texture2D" uid="uid://bep34dh0tippe" path="res://assets/art/Maps/insidetrain.png" id="1_7b7ux"]
 [ext_resource type="Script" uid="uid://ooh5nfhneilg" path="res://scripts/AreaScripts/insideTrain/train_scene.gd" id="1_f7me4"]
 [ext_resource type="PackedScene" uid="uid://dhrg8jpf1iybq" path="res://scenes/ui/dialogue_ui.tscn" id="1_vhm72"]
-[ext_resource type="Texture2D" uid="uid://6xfiejb4e2tu" path="res://assets/art/Maps/GuildHall.png" id="2_8x6ms"]
-[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="3_f7me4"]
+[ext_resource type="Texture2D" uid="uid://btthkb17t0qpl" path="res://assets/art/Maps/GuildHall.png" id="2_8x6ms"]
+[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="3_f7me4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxr6e"]
 texture = ExtResource("2_8x6ms")
@@ -833,6 +833,12 @@ libraries/ = SubResource("AnimationLibrary_f7me4")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=402873736]
 position = Vector2(272, 108)
 zoom = Vector2(4.185, 4.185)
+limit_left = 113
+limit_top = 47
+limit_right = 432
+limit_bottom = 145
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="DialogueUI" parent="." unique_id=1971843003 instance=ExtResource("1_vhm72")]
 

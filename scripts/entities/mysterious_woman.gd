@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
-@export var sprint_speed: float = 40.0 # Make her slightly slower than the player so they can reach the blue trigger!
+@export var sprint_speed: float = 70.0 # Make her slightly slower than the player so they can reach the blue trigger!
 var current_state = "NPC" # Can be "NPC" or "CHASING"
 var player_in_zone = false
 var player: CharacterBody2D
+
+# --- NEW: BARRIER VARIABLES ---
+@export var village_blocker_shape: CollisionShape2D
+@export var boss_exit_shape: CollisionShape2D
 
 @onready var interaction_label = $InteractionLabel
 @onready var animated_sprite = $Sprite2D
@@ -46,7 +50,14 @@ func trigger_dialogue_and_chase(ui) -> void:
 	if ui != null:
 		ui.start_conversation(reveal_text)
 		await ui.dialogue_finished
-	
+	# --- NEW: TRIGGER THE TRAP! ---
+	# Turn ON the wall behind them (using set_deferred is the safest way to change physics in Godot)
+	if village_blocker_shape:
+		village_blocker_shape.set_deferred("disabled", false)
+		
+	# Turn ON the exit trigger so they can escape
+	if boss_exit_shape:
+		boss_exit_shape.set_deferred("disabled", false)
 	# --- THE CHASE BEGINS ---
 	current_state = "CHASING"
 	

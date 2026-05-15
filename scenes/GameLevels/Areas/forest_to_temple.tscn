@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://n58xcrmfs5ma"]
 
 [ext_resource type="Texture2D" uid="uid://dld44fpolojr8" path="res://assets/art/Maps/temple.png" id="1_4tuox"]
+[ext_resource type="Script" uid="uid://d1d8p0kfrx5oj" path="res://scripts/AreaScripts/City/city.gd" id="1_ki7d0"]
 [ext_resource type="PackedScene" uid="uid://c06py24b6pkep" path="res://scenes/entities/mysterious_woman.tscn" id="2_f44un"]
 [ext_resource type="Script" uid="uid://buluid4akdhbe" path="res://scripts/AreaScripts/Forest/forest_entance.gd" id="2_led6e"]
 [ext_resource type="Script" uid="uid://dg2rwfdpi6mro" path="res://scripts/AreaScripts/Chase/chase.gd" id="3_01a7f"]
@@ -1612,7 +1613,11 @@ sources/3 = SubResource("TileSetAtlasSource_f44un")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuox"]
 size = Vector2(20, 75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki7d0"]
+size = Vector2(20, 78)
+
 [node name="forest_to_temple" type="Node2D" unique_id=636249301]
+script = ExtResource("1_ki7d0")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=688313486]
 texture_filter = 1
@@ -1622,11 +1627,13 @@ layer_0/tile_data = PackedInt32Array(196616, 65539, 0, 262152, 65539, 1, 327688,
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1679932632]
 
-[node name="MysteriousWoman" parent="NPCs" unique_id=745153246 instance=ExtResource("2_f44un")]
+[node name="MysteriousWoman" parent="NPCs" unique_id=745153246 node_paths=PackedStringArray("village_blocker_shape", "boss_exit_shape") instance=ExtResource("2_f44un")]
 position = Vector2(400, 352)
 scale = Vector2(0.125, 0.125)
+village_blocker_shape = NodePath("../../Trapdoor/CollisionShape2D")
+boss_exit_shape = NodePath("../../Triggers/Chase/CollisionShape2D")
 
-[node name="InteractionLabel" parent="NPCs/MysteriousWoman" index="3" unique_id=1595249792]
+[node name="InteractionLabel" parent="NPCs/MysteriousWoman" index="4" unique_id=1595249792]
 offset_left = -120.0
 offset_top = -136.0
 offset_right = -1.0
@@ -1653,6 +1660,7 @@ script = ExtResource("3_01a7f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Chase" unique_id=552553416]
 position = Vector2(734, 644)
 shape = SubResource("RectangleShape2D_4tuox")
+disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="Triggers/Chase" unique_id=426207935 groups=["Chase"]]
 position = Vector2(185, 459)
@@ -1699,6 +1707,30 @@ polygon = PackedVector2Array(785, 411, 964, 411, 964, 369, 1024, 369, 1024, 688,
 [node name="Temple" type="CollisionPolygon2D" parent="Boundaries/Collisions" unique_id=237486696]
 build_mode = 1
 polygon = PackedVector2Array(764, 361, 1006, 361, 1006, 314, 946, 255, 941, 255, 913, 227, 907, 228, 892, 216, 881, 214, 868, 226, 857, 228, 830, 254, 826, 260, 823, 257, 764, 315)
+
+[node name="Exit" type="CollisionPolygon2D" parent="Boundaries/Collisions" unique_id=166148885]
+build_mode = 1
+polygon = PackedVector2Array(687, 684, 783, 684, 784, 684, 784, 688, 687, 688)
+
+[node name="Exit2" type="CollisionPolygon2D" parent="Boundaries/Collisions" unique_id=1518667684]
+build_mode = 1
+polygon = PackedVector2Array(1024, 283, 1024, 369, 1021, 369, 1021, 283)
+
+[node name="Node" type="Node" parent="." unique_id=829358233]
+
+[node name="TopLeft" type="Marker2D" parent="Node" unique_id=270600358]
+position = Vector2(1024, 688)
+
+[node name="BottomRight" type="Marker2D" parent="Node" unique_id=1853306568]
+
+[node name="Trapdoor" type="StaticBody2D" parent="." unique_id=1003254793]
+position = Vector2(155, 484)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trapdoor" unique_id=1338763295]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_ki7d0")
+disabled = true
 
 [connection signal="body_entered" from="Triggers/ForestEntance" to="Triggers/ForestEntance" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Chase" to="Triggers/Chase" method="_on_body_entered"]

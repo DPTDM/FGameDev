@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhthr"]
 size = Vector2(126, 127)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_td88s"]
-radius = 263.0076
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8se4"]
+size = Vector2(625, 251)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8se4"]
 radius = 102.0
@@ -27,7 +27,8 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1690617945]
-shape = SubResource("CircleShape2D_td88s")
+position = Vector2(200.5, 6.5)
+shape = SubResource("RectangleShape2D_k8se4")
 
 [node name="KillArea" type="Area2D" parent="." unique_id=1439963855]
 collision_layer = 4

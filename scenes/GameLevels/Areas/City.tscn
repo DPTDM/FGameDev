@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://w6s3pajd5iq6"]
 
 [ext_resource type="Texture2D" uid="uid://bqlgsg87q1gyl" path="res://assets/art/Maps/city.png" id="1_6mpfg"]
+[ext_resource type="Script" uid="uid://d1d8p0kfrx5oj" path="res://scripts/AreaScripts/City/city.gd" id="1_w61ov"]
 [ext_resource type="Script" uid="uid://c5bjx7py2wd1c" path="res://scripts/AreaScripts/City/guild_hall.gd" id="2_poiou"]
 [ext_resource type="PackedScene" uid="uid://dha35igl83cqf" path="res://scenes/npcs/background_npc.tscn" id="2_w4ffd"]
 [ext_resource type="Script" uid="uid://d2ofolqjl70qp" path="res://scripts/AreaScripts/City/train.gd" id="3_yecve"]
@@ -4669,6 +4670,7 @@ size = Vector2(974.9998, 985)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4ffd"]
 
 [node name="City" type="Node2D" unique_id=2013714958]
+script = ExtResource("1_w61ov")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1800231477]
 tile_set = SubResource("TileSet_yecve")
@@ -4911,6 +4913,14 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary" unique_id=2145759129]
 polygon = PackedVector2Array(48, 864, 48, 32, 1248, 32, 1248, 597, 1246, 597, 1245, 34, 50, 35, 50, 864)
+
+[node name="Node" type="Node" parent="." unique_id=869676891]
+
+[node name="TopLeft" type="Marker2D" parent="Node" unique_id=811090600]
+position = Vector2(48, 32)
+
+[node name="BottomRight" type="Marker2D" parent="Node" unique_id=1346090238]
+position = Vector2(1248, 1024)
 
 [connection signal="body_entered" from="Triggers/Guild Hall" to="Triggers/Guild Hall" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Train" to="Triggers/Train" method="_on_body_entered"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8mvp24uivn8h"]
 
 [ext_resource type="Texture2D" uid="uid://dhfe5bjub0t0" path="res://assets/art/Maps/SitioDihsembr.png" id="1_s0gbd"]
+[ext_resource type="Script" uid="uid://d1d8p0kfrx5oj" path="res://scripts/AreaScripts/City/city.gd" id="1_y10yc"]
 [ext_resource type="Script" uid="uid://cuv0ehvy66c4b" path="res://scripts/AreaScripts/sitioVillage/village_entrance.gd" id="2_hmvno"]
 [ext_resource type="PackedScene" uid="uid://dha35igl83cqf" path="res://scenes/npcs/background_npc.tscn" id="3_4bosr"]
 [ext_resource type="PackedScene" uid="uid://bbwx3hak2fwrf" path="res://scenes/npcs/Ghoul.tscn" id="3_yfkxj"]
@@ -2499,6 +2500,7 @@ size = Vector2(974.9998, 945)
 size = Vector2(20, 42)
 
 [node name="Sitiodihsembr" type="Node2D" unique_id=1427101191]
+script = ExtResource("1_y10yc")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=528087860]
 tile_set = SubResource("TileSet_yfkxj")
@@ -2754,6 +2756,14 @@ scale = Vector2(0.1, 0.1)
 [node name="Ghoul3" parent="Enemies" unique_id=1928639727 instance=ExtResource("3_yfkxj")]
 position = Vector2(383, 422)
 scale = Vector2(0.1, 0.1)
+
+[node name="Node" type="Node" parent="." unique_id=1088988294]
+
+[node name="TopLeft" type="Marker2D" parent="Node" unique_id=1031875958]
+position = Vector2(96, 32)
+
+[node name="BottomRight" type="Marker2D" parent="Node" unique_id=1235269581]
+position = Vector2(1088, 672)
 
 [connection signal="body_entered" from="Triggers/VillageEntrance" to="Triggers/VillageEntrance" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/ForestEntance" to="Triggers/ForestEntance" method="_on_body_entered"]

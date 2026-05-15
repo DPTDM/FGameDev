@@ -20,8 +20,21 @@ var is_active := false
 # BUG FIX: Guard so _telegraph_and_fire() can't fire after the boss is freed
 var _is_retreating := false
 
+@onready var taunt_label: Label = $TauntLabel
+var boss_taunts: Array[String] = [
+	"Is that all the Anti-Mythics Guild taught you?",
+	"Your flesh is mine, Hunter!",
+	"I can smell your fear!",
+	"There's nowhere to hide in these ruins!",
+	"My hunger is endless!"
+]
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	
+	# Hide the label immediately!
+	if taunt_label:
+		taunt_label.hide()
 	
 	# 1. Hide her completely off the top of the screen to start
 	global_position.y = -200 
@@ -43,6 +56,10 @@ func cinematic_entrance() -> void:
 		# Play attack animation to intimidate the player
 		animated_sprite.play("attack")
 		
+		var arena = get_parent().get_parent() # Assuming Boss is inside a Character folder
+		if arena.has_method("trigger_shake"):
+			arena.trigger_shake(12.0, 0.4) # Heavy shake for 0.4 seconds!
+		
 		# BUG FIX: Was 0.00005 seconds (effectively instant, skipping the animation frame).
 		# Changed to 1.0 second so the "attack" intimidation animation is actually visible.
 		await get_tree().create_timer(1.0).timeout 
@@ -54,6 +71,10 @@ func cinematic_entrance() -> void:
 func start_fight() -> void:
 	is_active = true
 	animated_sprite.play("flying")
+	
+	# --- NEW: Start the taunt loop in the background! ---
+	taunt_loop()
+	
 	# Tell the ChaseManager that the boss has arrived!
 	emit_signal("chase_started")
 
@@ -157,3 +178,32 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		var arena = get_parent()
 		if arena.has_method("end_chase"):
 			arena.end_chase()
+# --- THE TAUNT LOOP ---
+func taunt_loop() -> void:
+	# This loop will run endlessly in the background as long as she is active/alive
+	while is_active and not _is_retreating:
+		# Wait a random amount of time between 4 to 8 seconds before taunting again
+		var wait_time = randf_range(4.0, 8.0)
+		await get_tree().create_timer(wait_time).timeout
+		
+		# CRITICAL SAFETY CHECK: Double-check she didn't retreat or get deleted during the wait!
+		if not is_active or _is_retreating or not is_instance_valid(self):
+			break
+			
+		# Pick a random taunt and show it
+		if taunt_label != null:
+			taunt_label.text = boss_taunts.pick_random()
+			taunt_label.show()
+			
+			# Optional Juice: Make the text scale up and bounce!
+			var tween = create_tween()
+			taunt_label.scale = Vector2(0.5, 0.5)
+			tween.tween_property(taunt_label, "scale", Vector2(1.2, 1.2), 0.2).set_trans(Tween.TRANS_BOUNCE)
+			tween.tween_property(taunt_label, "scale", Vector2(1.0, 1.0), 0.1)
+			
+			# Leave the text on screen for 2.5 seconds so the player can read it
+			await get_tree().create_timer(2.5).timeout
+			
+			# Hide it again (if she still exists)
+			if is_instance_valid(self) and taunt_label != null:
+				taunt_label.hide()

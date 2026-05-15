@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bwd1tbuqnjgog"]
+
+[ext_resource type="Script" uid="uid://c0axlgfito3jh" path="res://scripts/ui/credits.gd" id="1_oap8i"]
+
+[node name="Credits" type="Control" unique_id=167968922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oap8i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=312108487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1379709700]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.0
+offset_top = -227.0
+offset_right = 251.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1233783038]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "MAHIWAGA"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1758132666]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=171959938]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Lead Programmer & Editor"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=52668850]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Charles Neil Capule"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=397468940]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer" unique_id=1369653219]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Co-Programmer & Map Editor"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer" unique_id=907515254]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Jer Jurich Ty-Farma"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="VBoxContainer" unique_id=215759342]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer" unique_id=1963916945]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Graphics & Sprites Designer"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="VBoxContainer" unique_id=553717195]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Lloyd Anton P. Montero"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="VBoxContainer" unique_id=681193122]
+layout_mode = 2
+
+[node name="Label12" type="Label" parent="VBoxContainer" unique_id=2097847406]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "To be continued......"
+horizontal_alignment = 1
