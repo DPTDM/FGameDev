@@ -54,11 +54,12 @@ func start_receptionist_dialogue() -> void:
 			await ui.dialogue_finished
 			GameState.story_stage = 2
 			
-		# --- NEW: Added for after the Cutscene (Stage 3 and above) ---
-		3, _: 
+				# --- NEW: Added for after the Cutscene (Stage 3 and above) ---
+		3, _:
 			var post_cutscene = [
 				{"name": "Receptionist", "text": "Your party is waiting for you, {player}.", "portrait": "res://icon.svg"},
-				{"name": "Receptionist", "text": "The train to Sitio Dihsembr is ready whenever you are. Be careful out there.", "portrait": "res://icon.svg"}
+				{"name": "Receptionist", "text": "The train to Sitio Dihsembr is ready whenever you are. Be careful out there.", "portrait": "res://icon.svg"},
+				{"name": "Receptionist", "text": "Good luck.", "portrait": "res://icon.svg"}
 			]
 			ui.start_conversation(post_cutscene)
 			await ui.dialogue_finished

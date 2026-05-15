@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bg5perqlffwew"]
 
-[ext_resource type="Texture2D" uid="uid://btthkb17t0qpl" path="res://assets/art/Maps/GuildHall.png" id="1_que1o"]
+[ext_resource type="Texture2D" uid="uid://6xfiejb4e2tu" path="res://assets/art/Maps/GuildHall.png" id="1_que1o"]
 [ext_resource type="Script" uid="uid://d2cu5s8tf1ngk" path="res://scripts/AreaScripts/GuildHall/guild_hall_entrance.gd" id="2_4nq27"]
-[ext_resource type="PackedScene" uid="uid://dha35igl83cqf" path="res://scenes/npcs/background_npc.tscn" id="2_wiuaq"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/background_npc.tscn" id="2_wiuaq"]
 [ext_resource type="PackedScene" uid="uid://c5mwi1fin28kk" path="res://scenes/npcs/receptionist.tscn" id="3_ccxgq"]
 [ext_resource type="Script" uid="uid://2gn3it3g8ahr" path="res://scripts/AreaScripts/GuildHall/quest_board.gd" id="4_p4rf5"]
 [ext_resource type="Script" uid="uid://piecf4y5bjiq" path="res://scripts/AreaScripts/GuildHall/team_joins.gd" id="5_wy0cx"]
@@ -903,7 +903,7 @@ position = Vector2(576.5, 303)
 shape = SubResource("RectangleShape2D_wiuaq")
 
 [node name="Marker2D" type="Marker2D" parent="Triggers/TeamJoins" unique_id=1566052859 groups=["after_join"]]
-position = Vector2(560, 319)
+position = Vector2(480, 271)
 
 [connection signal="body_entered" from="Triggers/GuildHall Entrance" to="Triggers/GuildHall Entrance" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/QuestBoard" to="Triggers/QuestBoard" method="_on_body_entered"]

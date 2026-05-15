@@ -668,6 +668,106 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(6.085, 6.085)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ashton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Althea:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rgkds"]
+resource_name = "after_join"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ashton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664, 1.8666667, 2.5333333, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(432.4, 271.4), Vector2(432.4, 256.00003), Vector2(400, 256.00003), Vector2(354, 256.00003), Vector2(354, 232), Vector2(369, 225)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Althea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.01, 1.19, 2.02, 3.05, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(432.4, 288.4), Vector2(449, 288.4), Vector2(449, 256.00003), Vector2(449, 242), Vector2(386, 241), Vector2(386, 230), Vector2(370, 225)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8333333, 2, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(408, 281), Vector2(408, 258), Vector2(364, 258), Vector2(364, 214)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(449, 274), Vector2(449, 242), Vector2(369, 242), Vector2(369, 224)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ashton:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Althea:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_n6f7l"]
 resource_name = "party_join"
@@ -732,10 +832,35 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(6.085, 6.085), Vector2(6.085, 6.085), Vector2(8.25, 8.25)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Althea:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Ashton:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gxith"]
 _data = {
 &"RESET": SubResource("Animation_n2pum"),
+&"after_join": SubResource("Animation_rgkds"),
 &"party_join": SubResource("Animation_n6f7l")
 }
 
@@ -753,11 +878,13 @@ libraries/ = SubResource("AnimationLibrary_gxith")
 [node name="DialogueUI" parent="." unique_id=1971843003 instance=ExtResource("1_73cq6")]
 
 [node name="Ashton" type="Sprite2D" parent="." unique_id=831325620]
+visible = false
 position = Vector2(352.4, 392.4)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_rgkds")
 
 [node name="Althea" type="Sprite2D" parent="." unique_id=1550806688]
+visible = false
 position = Vector2(367, 393)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_rgkds")
@@ -773,3 +900,8 @@ texture = ExtResource("4_rgkds")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1833396417 groups=["party_join_marker"]]
 position = Vector2(-619, 291)
+
+[node name="Receptionist" type="Sprite2D" parent="." unique_id=457100116]
+position = Vector2(369, 177)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_rgkds")
