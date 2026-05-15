@@ -23,7 +23,7 @@ func _on_animation_finished(anim_name: String):
 			{"name": "Narrator", "text": "[Player] glances down in thought..."},
 			{"name": "Althea", "text": "Could we perhaps join you on this quest? I-I can heal you if you’re ever in trouble!"},
 			{"name": "Ashton", "text": "And I’ll be your shield. If something tries to tear you apart, it’ll have to go through me first."},
-			{"choices": [
+			{"name": "System", "text": "What will you do?" ,"choices": [
 				"Accept (Easy Mode)",
 				"Refuse (Hard Mode) (disabled)"
 			]}

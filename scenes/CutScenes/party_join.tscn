@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dhrg8jpf1iybq" path="res://scenes/ui/dialogue_ui.tscn" id="1_73cq6"]
 [ext_resource type="Script" uid="uid://dv65lvx3k3kei" path="res://scripts/AreaScripts/GuildHall/party_join.gd" id="1_n6f7l"]
-[ext_resource type="Texture2D" uid="uid://6xfiejb4e2tu" path="res://assets/art/Maps/GuildHall.png" id="2_n2pum"]
-[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="4_rgkds"]
+[ext_resource type="Texture2D" uid="uid://btthkb17t0qpl" path="res://assets/art/Maps/GuildHall.png" id="2_n2pum"]
+[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="4_rgkds"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p4vt"]
 texture = ExtResource("2_n2pum")

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c06py24b6pkep"]
+
+[ext_resource type="Script" uid="uid://enfi4x7513qd" path="res://scripts/entities/mysterious_woman.gd" id="1_td88s"]
+[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="2_k8se4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhthr"]
+size = Vector2(126, 127)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_td88s"]
+radius = 263.0076
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8se4"]
+radius = 102.0
+
+[node name="MysteriousWoman" type="CharacterBody2D" unique_id=745153246]
+script = ExtResource("1_td88s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1640548489]
+texture = ExtResource("2_k8se4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433089816]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vhthr")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=486636536]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1690617945]
+shape = SubResource("CircleShape2D_td88s")
+
+[node name="KillArea" type="Area2D" parent="." unique_id=1439963855]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea" unique_id=389371479]
+shape = SubResource("CircleShape2D_k8se4")
+debug_color = Color(0.98039216, 0, 0, 0.41960785)
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=1595249792]
+offset_left = -57.0
+offset_top = -139.0
+offset_right = 62.0
+offset_bottom = -116.0
+text = "Press [E] to talk"
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]
+[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
