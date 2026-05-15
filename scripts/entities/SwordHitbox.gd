@@ -9,18 +9,20 @@ var armor_piercing: bool = false
 var _hit_this_swing: Array[Node] = []
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)   # use body_entered for enemies
-	area_entered.connect(_on_area_entered)   # optional if you want area vs area
+	body_entered.connect(_on_body_entered)
+	area_entered.connect(_on_area_entered)
 
 func reset_swing() -> void:
 	_hit_this_swing.clear()
 
 func _on_area_entered(area: Area2D) -> void:
-	# optional: handle area vs area collisions
-	pass
+	pass  # reserved for future area-vs-area use
 
 func _on_body_entered(body: Node2D) -> void:
-	print("SwordHitbox overlapped:", body.name)
+	# BUG FIX: Sword hitbox was hitting the player's own CharacterBody2D.
+	# Guard against self-damage with a group check.
+	if body.is_in_group("player"):
+		return
 	if body in _hit_this_swing:
 		return
 	if body.has_method("take_damage"):

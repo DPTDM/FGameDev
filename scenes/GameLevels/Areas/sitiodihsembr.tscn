@@ -2508,23 +2508,7 @@ layer_0/tile_data = PackedInt32Array(131078, 0, 0, 196614, 0, 1, 262150, 0, 2, 3
 [node name="NPCs" type="Node2D" parent="." unique_id=292870251]
 
 [node name="Ghoul" parent="NPCs" unique_id=768642121 instance=ExtResource("3_yfkxj")]
-position = Vector2(243, 458)
-scale = Vector2(0.1, 0.1)
-
-[node name="Ghoul2" parent="NPCs" unique_id=646648284 instance=ExtResource("3_yfkxj")]
-position = Vector2(344, 426)
-scale = Vector2(0.1, 0.1)
-
-[node name="Ghoul3" parent="NPCs" unique_id=2143258256 instance=ExtResource("3_yfkxj")]
 position = Vector2(224, 372)
-scale = Vector2(0.1, 0.1)
-
-[node name="Ghoul4" parent="NPCs" unique_id=136236118 instance=ExtResource("3_yfkxj")]
-position = Vector2(277, 552)
-scale = Vector2(0.1, 0.1)
-
-[node name="Ghoul5" parent="NPCs" unique_id=160057146 instance=ExtResource("3_yfkxj")]
-position = Vector2(386, 507)
 scale = Vector2(0.1, 0.1)
 
 [node name="Tanod" parent="NPCs" unique_id=1944876763 instance=ExtResource("3_4bosr")]

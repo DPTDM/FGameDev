@@ -12,6 +12,12 @@ func _input(event):
 	if event.is_action_pressed("show_stats"):  # B key bound in Input Map
 		print("B key pressed - toggling StatPage")
 
+		# BUG FIX: B must not open the stats panel during dialogue or any other
+		# blocking scene (cutscene, popup, etc.). Check Global.is_dialogue_active
+		# before toggling so the panel never appears mid-conversation.
+		if Global.is_dialogue_active:
+			print("StatPage blocked — dialogue is active")
+			return
 
 		stat_page.visible = !stat_page.visible
 

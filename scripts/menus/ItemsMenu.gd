@@ -99,4 +99,4 @@ func _on_back_pressed() -> void:
 	if _detail_overlay.visible:
 		_on_back_from_detail()
 	else:
-		SceneTransition.fade_to("res://scenes/menus/PlayMenu.tscn")
+		TransitionScreen.fade_to("res://scenes/menus/PlayMenu.tscn")

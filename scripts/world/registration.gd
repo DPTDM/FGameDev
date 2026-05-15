@@ -24,9 +24,12 @@ func _on_start_button_pressed() -> void:
 		return
 
 	Global.player_name = entered_name
-	Global.gender = gender_dropdown.get_item_text(gender_dropdown.selected)
-	Global.specialization = spec_dropdown.get_item_text(spec_dropdown.selected)
-	Global.story_stage = 1
+	# BUG FIX: Global.gender does not exist; correct property is Global.player_gender
+	Global.player_gender = gender_dropdown.get_item_text(gender_dropdown.selected)
+	# BUG FIX: Global.specialization does not exist; correct property is Global.player_specialization
+	Global.player_specialization = spec_dropdown.get_item_text(spec_dropdown.selected)
+	# BUG FIX: Global.story_stage is removed; use GameState.story_stage
+	GameState.story_stage = 1
 	Global.is_dialogue_active = false
 
 	self.visible = false
@@ -35,7 +38,9 @@ func _on_start_button_pressed() -> void:
 	if player and player.has_method("update_weapon"):
 		player.update_weapon()
 
-	var ui = get_node_or_null("/root/GuildHall/DialogueUI")
+	# BUG FIX: hardcoded "/root/GuildHall/DialogueUI" breaks if scene is named differently.
+	# Use current_scene.get_node_or_null for robustness.
+	var ui = get_tree().current_scene.get_node_or_null("DialogueUI")
 	if ui:
 		var welcome_msg = [
 			{
@@ -44,4 +49,5 @@ func _on_start_button_pressed() -> void:
 				"portrait": "res://icon.svg"
 			}
 		]
-		ui.start_conversation("Receptionist", welcome_msg)
+		# BUG FIX: start_conversation() takes one argument only
+		ui.start_conversation(welcome_msg)
