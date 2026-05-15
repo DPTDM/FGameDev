@@ -22,11 +22,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneTransition="*res://scripts/global/SceneTransition.gd"
 GameState="*res://scripts/global/GameState.gd"
 Global="*res://scripts/global/global.gd"
 WindowManager="*res://scripts/global/WindowManager.gd"
 MenuMusic="*res://scripts/global/MenuMusic.gd"
+TransitionScreen="*uid://dcohty65l0ay3"
 
 [display]
 

@@ -46,7 +46,6 @@ func start_receptionist_dialogue() -> void:
 				GameState.story_stage = 1
 			print("DEBUG: Receptionist finished, stage =", GameState.story_stage)
 
-
 		1:
 			var quest_part = [
 				{"name": "Receptionist", "text": "Ah, {player}, the Quest Board is over there. Take a look.", "portrait": "res://icon.svg"}
@@ -54,3 +53,14 @@ func start_receptionist_dialogue() -> void:
 			ui.start_conversation(quest_part)
 			await ui.dialogue_finished
 			GameState.story_stage = 2
+			
+		# --- NEW: Added for after the Cutscene (Stage 3 and above) ---
+		3, _: 
+			var post_cutscene = [
+				{"name": "Receptionist", "text": "Your party is waiting for you, {player}.", "portrait": "res://icon.svg"},
+				{"name": "Receptionist", "text": "The train to Sitio Dihsembr is ready whenever you are. Be careful out there.", "portrait": "res://icon.svg"}
+			]
+			ui.start_conversation(post_cutscene)
+			await ui.dialogue_finished
+			
+			# We don't advance the stage here, because the player is now free to leave the building!

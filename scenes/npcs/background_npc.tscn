@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dha35igl83cqf"]
+
+[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="1_d3lvw"]
+[ext_resource type="Script" uid="uid://c3hu42ehymf6g" path="res://scripts/npcs/background_npc.gd" id="1_e6uet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6uet"]
+size = Vector2(974.9998, 2420)
+
+[node name="BackgroundNPC" type="Area2D" unique_id=1944876763]
+collision_mask = 2
+script = ExtResource("1_e6uet")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=942408349]
+texture = ExtResource("1_d3lvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1625871359]
+position = Vector2(0.5, 141)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_e6uet")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=1277928030]
+offset_left = -165.0
+offset_top = -120.0
+offset_right = -46.0
+offset_bottom = -97.0
+scale = Vector2(3, 3)
+text = "Press [E] to talk"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

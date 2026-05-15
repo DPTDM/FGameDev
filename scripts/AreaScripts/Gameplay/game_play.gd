@@ -12,7 +12,7 @@ func _input(event):
 	if event.is_action_pressed("show_stats"):  # B key bound in Input Map
 		print("B key pressed - toggling StatPage")
 
-		var stat_page = $HUD/StatPage
+
 		stat_page.visible = !stat_page.visible
 
 		if stat_page.visible:

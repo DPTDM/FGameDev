@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhfe5bjub0t0" path="res://assets/art/Maps/SitioDihsembr.png" id="1_s0gbd"]
 [ext_resource type="Script" uid="uid://cuv0ehvy66c4b" path="res://scripts/AreaScripts/sitioVillage/village_entrance.gd" id="2_hmvno"]
+[ext_resource type="PackedScene" uid="uid://dha35igl83cqf" path="res://scenes/npcs/background_npc.tscn" id="3_4bosr"]
 [ext_resource type="PackedScene" uid="uid://bbwx3hak2fwrf" path="res://scenes/npcs/Ghoul.tscn" id="3_yfkxj"]
 [ext_resource type="Script" path="res://scripts/AreaScripts/sitioVillage/forest_entance.gd" id="4_853nd"]
 
@@ -2491,6 +2492,9 @@ texture = ExtResource("1_s0gbd")
 [sub_resource type="TileSet" id="TileSet_yfkxj"]
 sources/0 = SubResource("TileSetAtlasSource_hmvno")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y10yc"]
+size = Vector2(974.9998, 945)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0gbd"]
 size = Vector2(20, 42)
 
@@ -2506,6 +2510,46 @@ layer_0/tile_data = PackedInt32Array(131078, 0, 0, 196614, 0, 1, 262150, 0, 2, 3
 [node name="Ghoul" parent="NPCs" unique_id=768642121 instance=ExtResource("3_yfkxj")]
 position = Vector2(224, 372)
 scale = Vector2(0.1, 0.1)
+
+[node name="Tanod" parent="NPCs" unique_id=1944876763 instance=ExtResource("3_4bosr")]
+position = Vector2(724, 340)
+scale = Vector2(0.125, 0.125)
+npc_name = "Barangay Tanod 1"
+dialogue_texts = Array[String](["Hello traveler, are you the one who will investigate the murders here?", "Come in, our kapitan  has been waiting for your arrival."])
+
+[node name="CollisionShape2D" parent="NPCs/Tanod" index="1" unique_id=1625871359]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_y10yc")
+
+[node name="Tanod2" parent="NPCs" unique_id=1624838490 instance=ExtResource("3_4bosr")]
+position = Vector2(724, 654)
+scale = Vector2(0.125, 0.125)
+npc_name = "Barangay Tanod 2"
+dialogue_texts = Array[String](["I'm supposed to patrol the perimeter, but I refuse to go near the tree line.", "Last night, the stray dogs wouldn't stop barking. But they weren't barking at the bushes... they were barking up at the canopy."])
+
+[node name="CollisionShape2D" parent="NPCs/Tanod2" index="1" unique_id=1625871359]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_y10yc")
+
+[node name="Kapitan" parent="NPCs" unique_id=1517528943 instance=ExtResource("3_4bosr")]
+position = Vector2(742, 477)
+scale = Vector2(0.125, 0.125)
+npc_name = "Kapitan"
+dialogue_texts = Array[String](["You are the Hunter they sent? You look far too young to face what is in those woods.", "Do not stray from the path. The shadows here have teeth."])
+
+[node name="CollisionShape2D" parent="NPCs/Kapitan" index="1" unique_id=1625871359]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_y10yc")
+
+[node name="Elias" parent="NPCs" unique_id=1603952645 instance=ExtResource("3_4bosr")]
+position = Vector2(475, 634)
+scale = Vector2(0.125, 0.125)
+npc_name = "Mang Elias"
+dialogue_texts = Array[String](["The Guild thinks they can solve everything with their glowing weapons.", "But the dark woods hold ancient secrets that the city refuses to understand. Be careful, Hunter."])
+
+[node name="CollisionShape2D" parent="NPCs/Elias" index="1" unique_id=1625871359]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_y10yc")
 
 [node name="Triggers" type="Node2D" parent="." unique_id=394455706]
 
@@ -2703,3 +2747,8 @@ polygon = PackedVector2Array(-609, -507, -609, -513, -572, -513, -572, -507)
 
 [connection signal="body_entered" from="Triggers/VillageEntrance" to="Triggers/VillageEntrance" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/ForestEntance" to="Triggers/ForestEntance" method="_on_body_entered"]
+
+[editable path="NPCs/Tanod"]
+[editable path="NPCs/Tanod2"]
+[editable path="NPCs/Kapitan"]
+[editable path="NPCs/Elias"]
