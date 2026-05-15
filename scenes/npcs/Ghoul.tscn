@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbwx3hak2fwrf"]
 
-[ext_resource type="Texture2D" uid="uid://dxqkg3ldtv0sc" path="res://icon.svg" id="1_d7ufd"]
+[ext_resource type="Texture2D" uid="uid://ufm2epwvabkq" path="res://icon.svg" id="1_d7ufd"]
 [ext_resource type="Script" uid="uid://cfdfxlpgcawbm" path="res://scripts/entities/ghoul.gd" id="1_j6ogh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6ogh"]
@@ -21,13 +21,14 @@ visible = false
 shape = SubResource("RectangleShape2D_j6ogh")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=428276982]
-collision_layer = 2
-collision_mask = 4
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1014149738]
 shape = SubResource("RectangleShape2D_j6ogh")
 
 [node name="AttackTelegraph" type="Area2D" parent="." unique_id=843987207]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackTelegraph" unique_id=1396238698]
 position = Vector2(124, 2)

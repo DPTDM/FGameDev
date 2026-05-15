@@ -30,5 +30,5 @@ func _on_body_entered(body: Node) -> void:
 		return
 	if body.has_method("take_damage"):
 		_has_hit = true
-		body.take_damage(DAMAGE, true)
+		body.take_damage(DAMAGE)
 		queue_free()

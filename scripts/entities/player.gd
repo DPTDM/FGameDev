@@ -160,7 +160,7 @@ func look_at_mouse() -> void:
 
 
 # --- Health management ---
-func take_damage(amount: int) -> void:
+func take_damage(amount: int, ap: bool = false) -> void:
 	current_hp = max(current_hp - amount, 0)
 	health_bar.value = current_hp
 	print("HP:", current_hp, "/", max_hp)
