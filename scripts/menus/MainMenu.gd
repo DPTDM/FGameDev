@@ -10,7 +10,7 @@ func _ready() -> void:
 	$CenterContainer/VBoxContainer/SettingsButton.pressed.connect(_on_settings_pressed)
 	$CenterContainer/VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
 
-
+#CHANGE FOR CHARLES
 func _on_play_pressed() -> void:
 	TransitionScreen.fade_to("res://scenes/menus/PlayMenu.tscn")
 
