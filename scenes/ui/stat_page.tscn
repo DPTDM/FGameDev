@@ -32,26 +32,37 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_s1554")
 
-[node name="Name" type="Label" parent="StatsPanel" unique_id=1809470935]
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsPanel" unique_id=708263097]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="StatsPanel/VBoxContainer" unique_id=1829783484]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="StatsPanel/VBoxContainer/TextureRect" unique_id=1809470935]
 layout_mode = 0
 offset_top = 50.0
-offset_right = 40.0
+offset_right = 51.0
 offset_bottom = 73.0
 text = "Name:"
 
-[node name="Class" type="Label" parent="StatsPanel" unique_id=1806697362]
+[node name="Class" type="Label" parent="StatsPanel/VBoxContainer/TextureRect" unique_id=1806697362]
 layout_mode = 0
 offset_top = 71.0
 offset_right = 51.0
 offset_bottom = 94.0
 text = "Class:"
 
-[node name="Level" type="Label" parent="StatsPanel" unique_id=1045894689]
+[node name="Level" type="Label" parent="StatsPanel/VBoxContainer/TextureRect" unique_id=1045894689]
 layout_mode = 0
 offset_top = 92.0
 offset_right = 51.0
 offset_bottom = 115.0
 text = "Level:"
+
+[node name="HSeparator" type="HSeparator" parent="StatsPanel/VBoxContainer" unique_id=986677972]
+layout_mode = 2
 
 [node name="StatText" type="Label" parent="StatsPanel" unique_id=767395404]
 layout_mode = 0

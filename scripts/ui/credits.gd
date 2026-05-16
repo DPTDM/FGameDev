@@ -19,7 +19,7 @@ func _on_credits_finished() -> void:
 	# Swap this out with your actual main menu path when you have one!
 	# get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 	print("Game Demo Concluded!")
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/menus/MainMenu.tscn")
 
 # Let the player skip the credits if they want
 func _input(event: InputEvent) -> void:

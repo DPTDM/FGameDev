@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Mahiwaga-may14-update"
 config/description="Top-down action game with main menu system."
-run/main_scene="uid://py88o7nrkbrt"
+run/main_scene="uid://bdrc1561nk5is"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

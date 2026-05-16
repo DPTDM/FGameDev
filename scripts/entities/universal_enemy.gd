@@ -3,8 +3,8 @@ extends CharacterBody2D
 # --- UNIVERSAL INSPECTOR VARIABLES ---
 @export_category("Enemy Stats")
 @export var enemy_name: String = "Enemy"
-@export var max_health: int = 50
-@export var movement_speed: float = 60.0
+@export var max_health: int = 10
+@export var movement_speed: float = 80.0
 @export var attack_damage: int = 5
 
 @export_category("AI Ranges")

@@ -15,7 +15,7 @@ func _ready() -> void:
 func _on_philippines_selected() -> void:
 	GameState.selected_world = 0
 	MenuMusic.play_lobby()
-	TransitionScreen.fade_to("res://scenes/world/guild_hall.tscn", PHILIPPINES_FADE_DURATION)
+	TransitionScreen.fade_to("res://scenes/GameLevels/Areas/IntroMonologue.tscn", PHILIPPINES_FADE_DURATION)
 
 func _on_practice_selected() -> void:
 	var popup_scene = load("res://scenes/menus/WeaponSelectPopup.tscn")
