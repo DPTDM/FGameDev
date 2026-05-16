@@ -69,3 +69,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Node" type="Node" parent="." unique_id=501189166]
+
+[node name="TopLeft" type="Marker2D" parent="Node" unique_id=14716840]
+position = Vector2(-239, -197)
+
+[node name="BottomRight" type="Marker2D" parent="Node" unique_id=1255210560]
+position = Vector2(239, 576)

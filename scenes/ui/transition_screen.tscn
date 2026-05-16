@@ -1,24 +1,6 @@
 [gd_scene format=3 uid="uid://dcohty65l0ay3"]
 
-[sub_resource type="GDScript" id="GDScript_jnurq"]
-script/source = "extends CanvasLayer
-
-@onready var animation_player = $AnimationPlayer
-
-# NEW: A custom transition function specifically for your GamePlay architecture
-func transition_to_area(gameplay_node: Node, target_path: String, target_group: String) -> void:
-	# 1. Fade out to black
-	animation_player.play(\"fade_to_black\")
-	
-	# Wait for the screen to go completely black
-	await animation_player.animation_finished
-	
-	# 2. Tell your GamePlay node to load the new map and place the player
-	gameplay_node.load_area(target_path, target_group)
-	
-	# 3. Fade back into the new world
-	animation_player.play(\"fade_to_normal\")
-"
+[ext_resource type="Script" uid="uid://cx1d0s4h6j4bm" path="res://scripts/global/SceneTransition.gd" id="1_1nnbl"]
 
 [sub_resource type="Animation" id="Animation_jnurq"]
 length = 0.001
@@ -74,7 +56,7 @@ _data = {
 
 [node name="TransitionScreen" type="CanvasLayer" unique_id=273625781]
 layer = 100
-script = SubResource("GDScript_jnurq")
+script = ExtResource("1_1nnbl")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1426705998]
 modulate = Color(1, 1, 1, 0)

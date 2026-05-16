@@ -1651,7 +1651,7 @@ position = Vector2(135, 456.5)
 shape = SubResource("RectangleShape2D_4tuox")
 
 [node name="Marker2D" type="Marker2D" parent="Triggers/ForestEntance" unique_id=622556269 groups=["forest_entrance"]]
-position = Vector2(185, 459)
+position = Vector2(156, 458)
 
 [node name="Chase" type="Area2D" parent="Triggers" unique_id=1113076526]
 collision_mask = 2
@@ -1663,7 +1663,7 @@ shape = SubResource("RectangleShape2D_4tuox")
 disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="Triggers/Chase" unique_id=426207935 groups=["Chase"]]
-position = Vector2(185, 459)
+position = Vector2(156, 458)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=79817414]
 
@@ -1719,16 +1719,17 @@ polygon = PackedVector2Array(1024, 283, 1024, 369, 1021, 369, 1021, 283)
 [node name="Node" type="Node" parent="." unique_id=829358233]
 
 [node name="TopLeft" type="Marker2D" parent="Node" unique_id=270600358]
-position = Vector2(1024, 688)
+position = Vector2(112, 48)
 
 [node name="BottomRight" type="Marker2D" parent="Node" unique_id=1853306568]
+position = Vector2(1024, 688)
 
 [node name="Trapdoor" type="StaticBody2D" parent="." unique_id=1003254793]
-position = Vector2(155, 484)
+position = Vector2(188, 463)
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trapdoor" unique_id=1338763295]
-position = Vector2(0, -28)
+position = Vector2(-2, -7)
 shape = SubResource("RectangleShape2D_ki7d0")
 disabled = true
 
